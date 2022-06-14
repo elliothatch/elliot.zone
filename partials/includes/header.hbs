@@ -1,0 +1,9 @@
+<header>
+		<a href="/">{{_site.title}}</a>
+		<nav>
+			{{#each _site.navLinks}}
+				{{hal-link @key this}}
+			{{/each}}
+		</nav>
+	</div>
+</header>

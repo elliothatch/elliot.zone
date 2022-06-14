@@ -1,0 +1,54 @@
+{
+	"title": "welcome to elliot.zone",
+	"store": [{
+		"@type": "https://schema.org/Product",
+		"name": "chess etc.",
+		"url": "/store/chess-etc",
+		"about": "portable magnetic chess set",
+		"thumbnailUrl": "/store/chess-etc/set-opened.jpg"
+	}],
+	"projects": [{
+		"@type": "https://schema.org/WebSite",
+		"name": "neurotischism.com",
+		"url": "https://neurotischism.com",
+		"about": "HTML canvas experiments",
+		"thumbnailUrl": "/projects/neurotischism-thumb.png"
+		}, {
+		"@type": "https://schema.org/WebSite",
+		"name": "Mazenet",
+		"url": "https://mazenet.net",
+		"about": "Social web spelunking",
+		"thumbnailUrl": "/projects/mazenet-thumb.png"
+	}],
+	"_links": {
+        "profile": {
+            "href": "/schema/homepage"
+        },
+		"store": {
+			"title": "store",
+			"href": "/store"
+		},
+		"storeFeatured": [{
+			"title": "chess etc.",
+			"href": "/store/chess-etc"
+		}],
+		"projects": {
+			"title": "projects",
+			"href": "/projects"
+		},
+		"posts": {
+			"title": "blog",
+			"href": "/blog"
+		},
+		"socialMedia": [{
+			"title": "github",
+			"href": "https://github.com/elliothatch/"
+		}, {
+			"title": "twitter",
+			"href": "https://twitter.com/neurotischism"
+		}, {
+			"title": "cybre",
+			"href": "https://cybre.space/@neurotischism"
+		}]
+	}
+}

@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+<section class="store featured">
+	<div class="card-container">
+		{{#each store}}
+			{{> includes/card.hbs this}}
+		{{/each}}
+	</div>
+	<h2>{{hal-link 'store' _links.store}}</h2>
+</section>
+<section class="projects featured">
+	<div class="card-container">
+	{{#each projects}}
+		{{> includes/card.hbs this}}
+	{{/each}}
+	</div>
+	<h2>{{hal-link 'projects' _links.projects}}</h2>
+</section>
+<h2>Social Media</h2>
+<ul>
+	{{#each _links.socialMedia}}
+		<li>{{hal-link "socialMedia" this}}</li>
+	{{/each}}
+</ul>

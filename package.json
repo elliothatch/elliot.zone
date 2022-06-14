@@ -1,0 +1,15 @@
+{
+  "name": "elliot.zone",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Elliot Hatch <elliot.hatch@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "sift hypermedium -O elliot.zone",
+    "dev": "sift hypermedium -S elliot.zone",
+    "start": "hypermedium -S elliot.zone"
+  },
+  "dependencies": {
+    "sanitize.css": "^13.0.0"
+  }
+}

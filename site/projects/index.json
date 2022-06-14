@@ -1,0 +1,13 @@
+{
+	"title": "welcome to elliot.zone",
+	"body": "enter the elliot zone now",
+	"_links": {
+		"sites": [{
+			"title": "neurotischism",
+			"href": "https://neurotischism.com"
+		}, {
+			"title": "mazenet.net",
+			"href": "https://mazenet.net"
+		}]
+	}
+}
