@@ -5,7 +5,7 @@
   "author": "Elliot Hatch <elliot.hatch@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "sift hypermedium -O elliot.zone",
+    "build": "sift hypermedium -f -O elliot.zone",
     "dev": "sift hypermedium -S elliot.zone",
     "start": "hypermedium -S elliot.zone"
   },

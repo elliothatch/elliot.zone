@@ -4,16 +4,36 @@ module.exports = {
 	name: 'elliot.zone',
 	version: '1.0.0',
 	pluginApi: '1',
-	dependencies: ['core', 'sass'],
+	dependencies: ['core', 'sass', 'markdown', 'favicons'],
 	moduleFactory: (options) => {
 		return {
-			files: ['dist', 'images'],
+			files: ['dist', 'images', {from: 'scripts', to: '/scripts'}],
 			hypermedia: {
 				sitePaths: ['site'],
 				processors: {
 					pre: [{
 						name: 'self'
 					}],
+					post: [{
+						// name: 'matchProfile',
+						// options: {
+						// 	profile: '/schema/post',
+						// 	processors: [{
+						// 		name: 'markdown',
+						// 		options: {
+						// 			fromUri: './post.md',
+						// 			to: 'bodyHtml',
+						// 		}
+						// 	}]
+						// }
+						// }
+						name: 'index',
+						options: {
+							property: '_links.profile.href'
+						}
+					}, {
+							name: 'resourceGraph'
+					}]
 				}
 			},
 			renderer: {
@@ -21,6 +41,11 @@ module.exports = {
 				partialPaths: ['partials'],
 				profileLayouts: {
 					'/schema/homepage': 'layouts/homepage.hbs',
+					'/schema/under-construction': 'layouts/under-construction.hbs',
+					'https://schema.org/BlogPosting': 'layouts/post.hbs',
+					'https://schema.org/ItemList': 'layouts/itemlist.hbs',
+					'https://schema.org/Product': 'layouts/product.hbs',
+					'https://schema.org/ProductGroup': 'layouts/product.hbs',
 				},
 				context: {
 					title: 'elliot.zone',

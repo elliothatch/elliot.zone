@@ -1,0 +1,351 @@
+{
+	"@context": [
+		"https://schema.org/",
+		{"@base": "https://elliot.zone/store/chess-etc"}
+	],
+
+	"_links": {
+		"profile": {
+			"href": "https://schema.org/ProductGroup"
+		}
+	},
+	"title": "chess etc.",
+
+	"@type": "https://schema.org/ProductGroup",
+	"name": "chess etc.",
+	"description": "Now with Checkers, Tangrams and Yotzo!",
+	"image": [
+		"/store/chess-etc/set-closed.jpg",
+		"/store/chess-etc/set-opened.jpg"
+	],
+	"body": "chess etc. is a 3d printed, hand assembled magnetic portable games set.",
+	"variesBy": [
+		"productID",
+		"color",
+		"pattern",
+		"lightColor",
+		"darkColor",
+		"boxColor",
+		"lidColor",
+		"chessLightColor",
+		"chessDarkColor",
+		"checkersLightColor",
+		"checkersDarkColor",
+		"tangramsColor",
+		"diceColor",
+		"pencilSharpenerColor",
+		"scorecardColor"
+	],
+
+	"colors": {
+		"White": "#ffffff",
+		"Black": "#000000",
+		"Brown": "",
+		"Orange": "#ff8000",
+		"Gold": "#ffbf00",
+		"Yellow": "#ffff00",
+		"Lime Green": "#5eb91e",
+		"Green": "#007700",
+		"Light Blue": "#00cbff",
+		"Royal Blue": "#0000ff",
+		"Purple": "#9900ff",
+		"Magenta": "#aa0044",
+		"Red": "#ff0000",
+		"Pink": "#ffa6c3",
+
+		"Galaxy Purple": "#5b277d",
+		"Glow in the Dark": "#f6f9d4",
+		"Blue Glow in the Dark": "#b3f4ff",
+		"Silky Silver": "#dddddd",
+		"Silky Gold": "#ffde59",
+		"Silky Copper": "#be480a",
+		"Rainbow": ""
+	},
+
+	"colorsDice": {
+	},
+
+	"lightColor": "White",
+	"darkColor": "Black",
+	"pattern": "standard",
+
+	"addOn": {
+		"name": "Customize...",
+		"price": 10,
+		"priceCurrency": "USD"
+	},
+
+	"offers": [{
+		"@type": "https://schema.org/Offer",
+		"price": 100,
+		"priceCurrency": "USD",
+		"itemCondition": "https://schema.org/NewCondition",
+		"availability": "https://schema.org/PreOrder",
+		"itemOffered": {
+			"@type": "https://schema.org/Product",
+			"@id": "#black",
+			"isVariantOf": "elliot.zone/store/chess-etc",
+			"color": "black",
+			"darkColor": "Black"
+		},
+		"seller": "https://elliot.zone#organization",
+		"url": "https://elliot.zone/store/chess-etc#black"
+		}, {
+			"@type": "https://schema.org/Offer",
+			"price": 100,
+			"priceCurrency": "USD",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/PreOrder",
+			"itemOffered": {
+				"@type": "https://schema.org/Product",
+				"@id": "red",
+				"isVariantOf": "https://elliot.zone/store/chess-etc",
+				"color": "red",
+				"darkColor": "Red"
+			},
+			"seller": "https://elliot.zone#organization",
+			"url": "https://elliot.zone/store/chess-etc#red"
+		}, {
+			"@type": "https://schema.org/Offer",
+			"price": 100,
+			"priceCurrency": "USD",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/PreOrder",
+			"itemOffered": {
+				"@type": "https://schema.org/Product",
+				"@id": "#blue",
+				"isVariantOf": "https://elliot.zone/store/chess-etc",
+				"color": "blue",
+				"darkColor": "Royal Blue"
+			},
+			"seller": "https://elliot.zone#organization",
+			"url": "https://elliot.zone/store/chess-etc#blue"
+		}, {
+			"@type": "https://schema.org/Offer",
+			"price": 100,
+			"priceCurrency": "USD",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/PreOrder",
+			"itemOffered": {
+				"@type": "https://schema.org/Product",
+				"@id": "#green",
+				"isVariantOf": "https://elliot.zone/store/chess-etc",
+				"color": "green",
+				"darkColor": "Green"
+			},
+			"seller": "https://elliot.zone#organization",
+			"url": "https://elliot.zone/store/chess-etc#green"
+		}, {
+			"@type": "https://schema.org/Offer",
+			"price": 100,
+			"priceCurrency": "USD",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/PreOrder",
+			"itemOffered": {
+				"@type": "https://schema.org/Product",
+				"@id": "#classic",
+				"isVariantOf": "https://elliot.zone/store/chess-etc",
+				"color": "classic",
+				"darkColor": "Black",
+				"checkersLightColor": "Red",
+				"diceColor": "White",
+				"tangramsColor": "Red"
+			},
+			"seller": "https://elliot.zone#organization",
+			"url": "https://elliot.zone/store/chess-etc#classic"
+		}, {
+			"@type": "https://schema.org/Offer",
+			"price": 100,
+			"priceCurrency": "USD",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/PreOrder",
+			"itemOffered": {
+				"@type": "https://schema.org/Product",
+				"@id": "#inverted",
+				"isVariantOf": "https://elliot.zone/store/chess-etc",
+				"color": "inverted",
+				"darkColor": "White",
+				"lightColor": "Black",
+				"chessLightColor": "White",
+				"chessDarkColor": "Black",
+				"checkerboardLightColor": "White",
+				"checkerboardDarkColor": "Black"
+			},
+			"seller": "https://elliot.zone#organization",
+			"url": "https://elliot.zone/store/chess-etc#inverted"
+		}, {
+			"@type": "https://schema.org/Offer",
+			"price": 100,
+			"priceCurrency": "USD",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/PreOrder",
+			"itemOffered": {
+				"@type": "https://schema.org/Product",
+				"@id": "#watermelon",
+				"isVariantOf": "https://elliot.zone/store/chess-etc",
+				"color": "watermelon",
+				"darkColor": "Pink",
+				"lightColor": "Lime Green",
+				"chessLightColor": "Pink",
+				"chessDarkColor": "Black",
+				"checkersLightColor": "Pink",
+				"checkersDarkColor": "Black",
+				"checkerboardDarkColor": "Black",
+				"checkerboardLightColor": "Pink",
+				"lidColor": "White"
+			},
+			"seller": "https://elliot.zone#organization",
+			"url": "https://elliot.zone/store/chess-etc#watermelon"
+		}, {
+			"@type": "https://schema.org/Offer",
+			"price": 110,
+			"priceCurrency": "USD",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/PreOrder",
+			"itemOffered": {
+				"@type": "https://schema.org/Product",
+				"@id": "#galaxy-purple",
+				"isVariantOf": "https://elliot.zone/store/chess-etc",
+				"color": "galaxy purple",
+				"darkColor": "Galaxy Purple"
+			},
+			"seller": "https://elliot.zone#organization",
+			"url": "https://elliot.zone/store/chess-etc#galaxy-purple"
+		}, {
+			"@type": "https://schema.org/Offer",
+			"price": 110,
+			"priceCurrency": "USD",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/PreOrder",
+			"itemOffered": {
+				"@type": "https://schema.org/Product",
+				"@id": "#glow-in-the-dark",
+				"isVariantOf": "https://elliot.zone/store/chess-etc",
+				"color": "glow in the dark",
+				"lightColor": "Glow in the Dark",
+				"darkColor": "Blue Glow in the Dark"
+			},
+			"seller": "https://elliot.zone#organization",
+			"url": "https://elliot.zone/store/chess-etc#glow-in-the-dark"
+		}, {
+			"@type": "https://schema.org/Offer",
+			"price": 120,
+			"priceCurrency": "USD",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/PreOrder",
+			"itemOffered": {
+				"@type": "https://schema.org/Product",
+				"@id": "#summer",
+				"isVariantOf": "https://elliot.zone/store/chess-etc",
+				"color": "summer (4 colors)",
+				"darkColor": "Magenta",
+				"checkersLightColor": "Orange",
+				"checkersDarkColor": "Pink",
+				"tangramsColor": "Yellow",
+				"sq-1-color": "Orange",
+				"sq-3-color": "Orange",
+				"sq-5-color": "Orange",
+				"sq-7-color": "Orange"
+			},
+			"seller": "https://elliot.zone#organization",
+			"url": "https://elliot.zone/store/chess-etc#summer"
+		}, {
+			"@type": "https://schema.org/Offer",
+			"price": 120,
+			"priceCurrency": "USD",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/PreOrder",
+			"itemOffered": {
+				"@type": "https://schema.org/Product",
+				"@id": "#winter",
+				"isVariantOf": "https://elliot.zone/store/chess-etc",
+				"color": "winter (4 colors)",
+				"darkColor": "Purple",
+				"checkersLightColor": "Pink",
+				"checkersDark": "Blue",
+				"tangramsColor": "Light Blue"
+			},
+			"seller": "https://elliot.zone#organization",
+			"url": "https://elliot.zone/store/chess-etc#winter"
+		}, {
+			"@type": "https://schema.org/Offer",
+			"price": 130,
+			"priceCurrency": "USD",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/PreOrder",
+			"itemOffered": {
+				"@type": "https://schema.org/Product",
+				"@id": "#silver-and-gold",
+				"isVariantOf": "https://elliot.zone/store/chess-etc",
+				"color": "silver & gold",
+				"darkColor": "Silky Silver",
+				"lightColor": "Silky Gold"
+			},
+			"seller": "https://elliot.zone#organization",
+			"url": "https://elliot.zone/store/chess-etc#silver-and-gold"
+		}, {
+			"@type": "https://schema.org/Offer",
+			"price": 130,
+			"priceCurrency": "USD",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/PreOrder",
+			"itemOffered": {
+				"@type": "https://schema.org/Product",
+				"@id": "#custom-2",
+				"isVariantOf": "https://elliot.zone/store/chess-etc",
+				"color": "custom (2 colors)"
+			},
+			"seller": "https://elliot.zone#organization",
+			"url": "https://elliot.zone/store/chess-etc#custom-2"
+		}, {
+			"@type": "https://schema.org/Offer",
+			"price": 140,
+			"priceCurrency": "USD",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/PreOrder",
+			"itemOffered": {
+				"@type": "https://schema.org/Product",
+				"@id": "#custom-4",
+				"isVariantOf": "https://elliot.zone/store/chess-etc",
+				"color": "custom (4 colors)"
+			},
+			"seller": "https://elliot.zone#organization",
+			"url": "https://elliot.zone/store/chess-etc#custom-4"
+		}, {
+			"@type": "https://schema.org/Offer",
+			"price": 150,
+			"priceCurrency": "USD",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/PreOrder",
+			"itemOffered": {
+				"@type": "https://schema.org/Product",
+				"@id": "#custom-full",
+				"isVariantOf": "https://elliot.zone/store/chess-etc",
+				"color": "full custom",
+				"price": 150
+			},
+			"seller": "https://elliot.zone#organization",
+			"url": "https://elliot.zone/store/chess-etc#custom-full"
+		}
+	],
+	"storeSection": [{
+		"@type": "/schema/storeSection",
+		"name": "contents",
+		"body": [
+			"1 box",
+			"1 lid",
+			"34 chess pieces (17 light/17 dark)",
+			"24 checkers (12 light/12 dark)",
+			"1 tangrams set (7 tangrams)",
+			"6 dice (12mm)",
+			"1 adhesive score pad",
+			"2 pencil (3.5in)",
+			"1 pencil sharpener",
+			"2 erasers"
+		]
+	}, {
+		"@type": "/schema/storeSection",
+		"name": "specifications",
+		"body": "dimensions: 0x0mm"
+	}]
+}

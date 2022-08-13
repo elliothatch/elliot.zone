@@ -4,7 +4,7 @@
 		"@type": "https://schema.org/Product",
 		"name": "chess etc.",
 		"url": "/store/chess-etc",
-		"about": "portable magnetic chess set",
+		"about": "portable magnetic classic games set",
 		"thumbnailUrl": "/store/chess-etc/set-opened.jpg"
 	}],
 	"projects": [{
@@ -19,6 +19,45 @@
 		"url": "https://mazenet.net",
 		"about": "Social web spelunking",
 		"thumbnailUrl": "/projects/mazenet-thumb.png"
+		}, {
+		"@type": "https://schema.org/CreativeWork",
+		"name": "clock",
+		"url": "/projects/clock",
+		"about": "esp32 powered rgb led clock",
+		"thumbnailUrl": "/projects/clock-thumb.jpg"
+		}, {
+		"@type": "https://schema.org/CreativeWork",
+		"name": "burgundy",
+		"url": "/projects/burgundy",
+		"about": "color schemes",
+		"thumbnailUrl": "https://raw.githubusercontent.com/elliothatch/burgundy.vim/master/screenshots/burgundy.png"
+	}],
+	"code": [{
+		"@type": "https://schema.org/SoftwareApplication",
+		"name": "hypermedium",
+		"url": "https://github.com/elliothatch/hypermedium",
+		"about": "tool for creating websites (used to create elliot.zone)"
+		}, {
+
+		"@type": "https://schema.org/SoftwareApplication",
+		"name": "sift cli",
+		"url": "https://github.com/elliothatch/sift",
+		"about": "Search and filter structured logs interactively in the terminal"
+		}, {
+		"@type": "https://schema.org/SoftwareApplication",
+		"name": "freshlog",
+		"url": "https://github.com/elliothatch/freshlog",
+		"about": "simple nodejs logger"
+		}, {
+		"@type": "https://schema.org/SoftwareApplication",
+		"name": "fresh-validation",
+		"url": "https://github.com/elliothatch/fresh-validation",
+		"about": "runtime schema validation for typescript classes"
+		}, {
+		"@type": "https://schema.org/SoftwareSourceCode",
+		"name": "sample code",
+		"url": "https://github.com/elliothatch/sample-code",
+		"about": "sample code snippets in various programming languages (for testing color schemes)"
 	}],
 	"_links": {
         "profile": {
@@ -28,15 +67,11 @@
 			"title": "store",
 			"href": "/store"
 		},
-		"storeFeatured": [{
-			"title": "chess etc.",
-			"href": "/store/chess-etc"
-		}],
 		"projects": {
 			"title": "projects",
 			"href": "/projects"
 		},
-		"posts": {
+		"blog": {
 			"title": "blog",
 			"href": "/blog"
 		},
@@ -44,11 +79,36 @@
 			"title": "github",
 			"href": "https://github.com/elliothatch/"
 		}, {
+			"title": "npm",
+			"href": "https://www.npmjs.com/~elliothatch"
+		}, {
 			"title": "twitter",
 			"href": "https://twitter.com/neurotischism"
 		}, {
 			"title": "cybre",
 			"href": "https://cybre.space/@neurotischism"
 		}]
-	}
+	},
+	"_processors": [{
+		"name": "getIndex",
+		"options": {
+			"property": "_links.profile.href",
+			"filter": "https://schema.org/BlogPosting",
+			"to": "blog"
+		}
+	}, {
+		"name": "sort",
+		"options": {
+			"property": "blog",
+			"key": "date-created",
+			"compare": "date",
+			"descending": true
+		}
+	}, {
+		"name": "embed",
+		"options": {
+			"property": "blog",
+			"pick": ["date-created", "description"]
+		}
+	}]
 }

@@ -1,0 +1,7 @@
+<h1>{{title}}</h1>
+<p>{{body}}</p>
+<ol class="card-container-horiz item-list">
+	{{#each itemListElement}}
+		<li>{{> includes/card.hbs this}}</li>
+	{{/each}}
+</ol>

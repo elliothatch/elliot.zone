@@ -1,19 +1,41 @@
 <h1>{{title}}</h1>
 <section class="store featured">
+	<h2>{{hal-link 'store' _links.store}}</h2>
 	<div class="card-container">
 		{{#each store}}
 			{{> includes/card.hbs this}}
 		{{/each}}
 	</div>
-	<h2>{{hal-link 'store' _links.store}}</h2>
 </section>
 <section class="projects featured">
+	<h2>{{hal-link 'projects' _links.projects}}</h2>
 	<div class="card-container">
 	{{#each projects}}
 		{{> includes/card.hbs this}}
 	{{/each}}
 	</div>
-	<h2>{{hal-link 'projects' _links.projects}}</h2>
+</section>
+<section class="code-section featured">
+	<h2>code</h2>
+	<ul class=" items">
+	{{#each code}}
+		<li><a href="{{url}}">{{name}}</a> - {{about}}</li>
+	{{/each}}
+	</ul>
+</section>
+<section class="blog featured">
+	<h2>{{hal-link 'blog' _links.blog}}</h2>
+	<ol class="card-container-horiz items articles">
+		{{#each blog}}
+		<li>
+		{{#embedded ../this this "blog"}}
+			{{hal-link "blog" _links.self}}{{#if description}} - {{description}}{{/if}}{{#if date-created}} - {{datetime date-created 'MMMM D, YYYY'}}{{/if}}
+		{{else}}
+			{{hal-link "blog" this}}
+		{{/embedded}}
+		</li>
+		{{/each}}
+	</ol>
 </section>
 <h2>Social Media</h2>
 <ul>

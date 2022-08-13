@@ -1,0 +1,77 @@
+<h1>{{title}}</h1>
+<h2>{{description}}</h2>
+<section>
+	<div class="product-group">
+		<div class="image-gallery">
+			{{#each image}}
+			<div class="thumbnail">
+				<picture>
+					<img src="{{this}}">
+				</picture>
+			</div>
+			{{/each}}
+		</div>
+
+		<p>{{body}}</p>
+		<h3><span class="price">{{offers.0.price}}</span> <span class="currency">{{offers.0.priceCurrency}}</span></h3>
+		<div class="chess-etc-set-colors">
+			<div class="lid">
+				<div class="checkerboard">
+					{{#each (range 64)}}
+						<div class="square sq-{{@index}}">
+						</div>
+					{{/each}}
+				</div>
+			</div>
+			<div class="box">
+				<div class="box-bg"></div>
+				<div class="chess-light">
+					{{> includes/icons/chess-etc-colors/chess-light.svg }}
+				</div>
+				<div class="chess-dark">
+					{{> includes/icons/chess-etc-colors/chess-dark.svg }}
+				</div>
+				<div class="checkers-light">
+					{{> includes/icons/chess-etc-colors/checkers-light.svg }}
+				</div>
+				<div class="checkers-dark">
+					{{> includes/icons/chess-etc-colors/checkers-dark.svg }}
+				</div>
+				<div class="tangrams">
+					{{> includes/icons/chess-etc-colors/tangrams.svg }}
+				</div>
+				<div class="dice">
+					{{> includes/icons/chess-etc-colors/dice.svg }}
+				</div>
+			</div>
+		</div>
+		<div class="offers">
+			{{#each offers}}
+				<div class="offer" {{#each this}}data-{{@key}}="{{this}}"{{/each}}>
+					<div class="product itemOffered" {{#each itemOffered}}data-{{@key}}="{{this}}"{{/each}}>
+				{{!-- <h3>{{or price ../price}} {{or priceCurrency ../priceCurrency}}</h3> --}}
+				{{#if (and itemOffered.darkColor itemOffered.lightColor)}}
+					<div class="multi-circle">
+						<span class="semi-circle-top" style="background: {{get itemOffered.darkColor ../colors}};"></span>
+						<span class="semi-circle-bottom" style="background: {{get itemOffered.lightColor ../colors}};"></span>
+					</div>
+				{{else}}
+					<span class="circle" {{#if itemOffered.darkColor}}style="background: {{get itemOffered.darkColor ../colors}};"{{else if itemOffered.lightColor}}style="background: {{get itemOffered.lightColor ../colors}};"{{/if}}></span>
+				{{/if}}
+					<p class="color">{{itemOffered.color}}</p>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</section>
+
+{{#each storeSection}}
+	<section>
+		<h3>{{name}}</h3>
+		<p>{{body}}</p>
+	</section>
+{{/each}}
+
+<script src="/scripts/product.js"></script>
+<script src="/scripts/chess-etc-set-colors.js"></script>

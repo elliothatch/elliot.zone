@@ -1,0 +1,25 @@
+{
+	"title": "how I use neovim",
+	"date-created": "2021-05-23",
+	"tag": ["blog", "neovim", "configuration"],
+	"description": "useful commands and plugins",
+	"_links": {
+		"profile": {
+			"href": "https://schema.org/BlogPosting"
+		}
+	},
+	"_processors": [{
+		"name": "copy",
+		"options": {
+			"uri": "/blog/2021-05-23-neovim/post.md",
+			"from": "contents",
+			"to": "markdown"
+		}
+	}, {
+		"name": "markdown",
+		"options": {
+			"from": "markdown",
+			"to": "body"
+		}
+	}]
+}
