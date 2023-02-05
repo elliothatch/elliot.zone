@@ -1,0 +1,24 @@
+{
+	"_links": {
+		"profile": {
+			"href": "https://schema.org/AboutPage"
+		}
+	},
+	"@type": "https://schema.org/AboutPage",
+
+	"title": "About Me",
+	"_processors": [{
+		"name": "copy",
+		"options": {
+			"uri": "/about/post.md",
+			"from": "contents",
+			"to": "markdown"
+		}
+	}, {
+		"name": "markdown",
+		"options": {
+			"from": "markdown",
+			"to": "body"
+		}
+	}]
+}

@@ -46,23 +46,40 @@ module.exports = {
 					'https://schema.org/ItemList': 'layouts/itemlist.hbs',
 					'https://schema.org/Product': 'layouts/product.hbs',
 					'https://schema.org/ProductGroup': 'layouts/product.hbs',
+					'https://schema.org/AboutPage': 'layouts/about.hbs',
 				},
 				context: {
 					title: 'elliot.zone',
 					navLinks: {
-						"store": {
-							"href": "/store",
-							"title": "Store"
-						},
-						"projects": {
-							"href": "/projects",
-							"title": "Projects"
-						},
+						// "store": {
+						// 	"href": "/store",
+						// 	"title": "Store"
+						// },
+						// "projects": {
+						// 	"href": "/projects",
+						// 	"title": "Projects"
+						// },
 						"about": {
 							"href": "/about",
 							"title": "About"
 						},
-					}
+					},
+					footerLinks: [{
+						"title": "github",
+						"href": "https://github.com/elliothatch/"
+					}, {
+						"title": "npm",
+						"href": "https://www.npmjs.com/~elliothatch"
+					}, {
+						"title": "twitter",
+						"href": "https://twitter.com/neurotischism"
+					}, {
+						"title": "fedi",
+						"href": "https://weirder.earth/@neurotischism"
+					}, {
+						"title": "patreon",
+						"href": "https://www.patreon.com/neurotischism"
+					}]
 				}
 			},
 			build: {

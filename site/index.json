@@ -24,25 +24,38 @@
 		"name": "clock",
 		"url": "/projects/clock",
 		"about": "esp32 powered rgb led clock",
-		"thumbnailUrl": "/projects/clock-thumb.jpg"
+		"thumbnailUrl": "/projects/clock-thumb.jpg",
+		"hidden": true
 		}, {
+		"@type": "https://schema.org/SoftwareApplication",
+		"name": "sift cli",
+		"url": "https://github.com/elliothatch/sift",
+		"about": "interactive log filtering",
+		"thumbnailUrl": "/projects/sift.gif"
+		}, {
+		"@type": "https://schema.org/CreativeWork",
+		"name": "zine machine",
+		"url": "https://github.com/elliothatch/zine-machine",
+		"about": "a little box that spits text out of a receipt printer",
+		"thumbnailUrl": "/projects/zine-machine.jpg"
+	}, {
 		"@type": "https://schema.org/CreativeWork",
 		"name": "burgundy",
 		"url": "/projects/burgundy",
 		"about": "color schemes",
 		"thumbnailUrl": "https://raw.githubusercontent.com/elliothatch/burgundy.vim/master/screenshots/burgundy.png"
+	}, {
+		"@type": "https://schema.org/SoftwareApplication",
+		"name": "esp32-leds",
+		"url": "https://github.com/elliothatch/esp32-leds",
+		"about": "driving WS2812 RBG leds with an ESP32 (WIP)",
+		"thumbnailUrl": "/projects/clock-thumb.jpg"
 	}],
 	"code": [{
 		"@type": "https://schema.org/SoftwareApplication",
 		"name": "hypermedium",
 		"url": "https://github.com/elliothatch/hypermedium",
-		"about": "tool for creating websites (used to create elliot.zone)"
-		}, {
-
-		"@type": "https://schema.org/SoftwareApplication",
-		"name": "sift cli",
-		"url": "https://github.com/elliothatch/sift",
-		"about": "Search and filter structured logs interactively in the terminal"
+		"about": "tool for creating websites (including this one!)"
 		}, {
 		"@type": "https://schema.org/SoftwareApplication",
 		"name": "freshlog",
@@ -58,6 +71,11 @@
 		"name": "sample code",
 		"url": "https://github.com/elliothatch/sample-code",
 		"about": "sample code snippets in various programming languages (for testing color schemes)"
+		}, {
+		"@type": "https://schema.org/SoftwareSourceCode",
+		"name": "fresh-socketio-router",
+		"url": "https://github.com/elliothatch/fresh-socketio-router",
+		"about": "middleware router for socketio transactions"
 	}],
 	"_links": {
         "profile": {
@@ -85,8 +103,8 @@
 			"title": "twitter",
 			"href": "https://twitter.com/neurotischism"
 		}, {
-			"title": "cybre",
-			"href": "https://cybre.space/@neurotischism"
+			"title": "fedi",
+			"href": "https://weirder.earth/@neurotischism"
 		}]
 	},
 	"_processors": [{

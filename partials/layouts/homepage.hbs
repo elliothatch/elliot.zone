@@ -1,6 +1,7 @@
 <h1>{{title}}</h1>
 <section class="store featured">
-	<h2>{{hal-link 'store' _links.store}}</h2>
+	{{!-- <h2>{{hal-link 'store' _links.store}}</h2> --}}
+	<h2>store</h2>
 	<div class="card-container">
 		{{#each store}}
 			{{> includes/card.hbs this}}
@@ -8,21 +9,24 @@
 	</div>
 </section>
 <section class="projects featured">
-	<h2>{{hal-link 'projects' _links.projects}}</h2>
+	<h2>projects</h2>
 	<div class="card-container">
 	{{#each projects}}
-		{{> includes/card.hbs this}}
+		{{#unless this.hidden}}
+			{{> includes/card.hbs this}}
+		{{/unless}}
 	{{/each}}
 	</div>
 </section>
 <section class="code-section featured">
 	<h2>code</h2>
-	<ul class=" items">
+	<ul class="items">
 	{{#each code}}
 		<li><a href="{{url}}">{{name}}</a> - {{about}}</li>
 	{{/each}}
 	</ul>
 </section>
+{{!--
 <section class="blog featured">
 	<h2>{{hal-link 'blog' _links.blog}}</h2>
 	<ol class="card-container-horiz items articles">
@@ -37,9 +41,14 @@
 		{{/each}}
 	</ol>
 </section>
-<h2>Social Media</h2>
-<ul>
-	{{#each _links.socialMedia}}
-		<li>{{hal-link "socialMedia" this}}</li>
-	{{/each}}
-</ul>
+--}}
+{{!--
+<section>
+	<h2>links</h2>
+	<ul class="items">
+		{{#each _links.socialMedia}}
+			<li>{{hal-link "socialMedia" this}}</li>
+		{{/each}}
+	</ul>
+</section>
+--}}

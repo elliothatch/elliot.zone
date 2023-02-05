@@ -15,10 +15,11 @@
 	"name": "chess etc.",
 	"description": "Now with Checkers, Tangrams and Yotzo!",
 	"image": [
+		"/store/chess-etc/set-clean.jpg",
 		"/store/chess-etc/set-closed.jpg",
 		"/store/chess-etc/set-opened.jpg"
 	],
-	"body": "chess etc. is a 3d printed, hand assembled magnetic portable games set.",
+	"body": "chess etc. is a 3d printed, hand assembled magnetic portable games set.<br>Includes chess, checkers, tangrams, and Yotzo dice.<br>The chess and checkers pieces contain strong magnets, so they stick to the board, and to the metal rails on the sides of the box.<br>Magnetic locks keep the sliding lid secured to the box during transport.<br>Perfect for travel or outdoor play!<br><br>Ages 8 years and up.<br>1+ players<br>WARNING: CHOKING HAZARD--Small parts. Not for children under 3 yrs.<br>Do not expose to temperatures exceeding 50° C (122 °F).",
 	"variesBy": [
 		"productID",
 		"color",
@@ -84,7 +85,7 @@
 		"itemOffered": {
 			"@type": "https://schema.org/Product",
 			"@id": "#black",
-			"isVariantOf": "elliot.zone/store/chess-etc",
+			"isVariantOf": "https://elliot.zone/store/chess-etc",
 			"color": "black",
 			"darkColor": "Black"
 		},
@@ -175,29 +176,6 @@
 			"url": "https://elliot.zone/store/chess-etc#inverted"
 		}, {
 			"@type": "https://schema.org/Offer",
-			"price": 100,
-			"priceCurrency": "USD",
-			"itemCondition": "https://schema.org/NewCondition",
-			"availability": "https://schema.org/PreOrder",
-			"itemOffered": {
-				"@type": "https://schema.org/Product",
-				"@id": "#watermelon",
-				"isVariantOf": "https://elliot.zone/store/chess-etc",
-				"color": "watermelon",
-				"darkColor": "Pink",
-				"lightColor": "Lime Green",
-				"chessLightColor": "Pink",
-				"chessDarkColor": "Black",
-				"checkersLightColor": "Pink",
-				"checkersDarkColor": "Black",
-				"checkerboardDarkColor": "Black",
-				"checkerboardLightColor": "Pink",
-				"lidColor": "White"
-			},
-			"seller": "https://elliot.zone#organization",
-			"url": "https://elliot.zone/store/chess-etc#watermelon"
-		}, {
-			"@type": "https://schema.org/Offer",
 			"price": 110,
 			"priceCurrency": "USD",
 			"itemCondition": "https://schema.org/NewCondition",
@@ -227,6 +205,29 @@
 			},
 			"seller": "https://elliot.zone#organization",
 			"url": "https://elliot.zone/store/chess-etc#glow-in-the-dark"
+		}, {
+			"@type": "https://schema.org/Offer",
+			"price": 120,
+			"priceCurrency": "USD",
+			"itemCondition": "https://schema.org/NewCondition",
+			"availability": "https://schema.org/PreOrder",
+			"itemOffered": {
+				"@type": "https://schema.org/Product",
+				"@id": "#watermelon",
+				"isVariantOf": "https://elliot.zone/store/chess-etc",
+				"color": "watermelon",
+				"darkColor": "Pink",
+				"lightColor": "Lime Green",
+				"chessLightColor": "Pink",
+				"chessDarkColor": "Black",
+				"checkersLightColor": "Pink",
+				"checkersDarkColor": "Black",
+				"checkerboardDarkColor": "Black",
+				"checkerboardLightColor": "Pink",
+				"lidColor": "White"
+			},
+			"seller": "https://elliot.zone#organization",
+			"url": "https://elliot.zone/store/chess-etc#watermelon"
 		}, {
 			"@type": "https://schema.org/Offer",
 			"price": 120,
@@ -283,49 +284,6 @@
 			},
 			"seller": "https://elliot.zone#organization",
 			"url": "https://elliot.zone/store/chess-etc#silver-and-gold"
-		}, {
-			"@type": "https://schema.org/Offer",
-			"price": 130,
-			"priceCurrency": "USD",
-			"itemCondition": "https://schema.org/NewCondition",
-			"availability": "https://schema.org/PreOrder",
-			"itemOffered": {
-				"@type": "https://schema.org/Product",
-				"@id": "#custom-2",
-				"isVariantOf": "https://elliot.zone/store/chess-etc",
-				"color": "custom (2 colors)"
-			},
-			"seller": "https://elliot.zone#organization",
-			"url": "https://elliot.zone/store/chess-etc#custom-2"
-		}, {
-			"@type": "https://schema.org/Offer",
-			"price": 140,
-			"priceCurrency": "USD",
-			"itemCondition": "https://schema.org/NewCondition",
-			"availability": "https://schema.org/PreOrder",
-			"itemOffered": {
-				"@type": "https://schema.org/Product",
-				"@id": "#custom-4",
-				"isVariantOf": "https://elliot.zone/store/chess-etc",
-				"color": "custom (4 colors)"
-			},
-			"seller": "https://elliot.zone#organization",
-			"url": "https://elliot.zone/store/chess-etc#custom-4"
-		}, {
-			"@type": "https://schema.org/Offer",
-			"price": 150,
-			"priceCurrency": "USD",
-			"itemCondition": "https://schema.org/NewCondition",
-			"availability": "https://schema.org/PreOrder",
-			"itemOffered": {
-				"@type": "https://schema.org/Product",
-				"@id": "#custom-full",
-				"isVariantOf": "https://elliot.zone/store/chess-etc",
-				"color": "full custom",
-				"price": 150
-			},
-			"seller": "https://elliot.zone#organization",
-			"url": "https://elliot.zone/store/chess-etc#custom-full"
 		}
 	],
 	"storeSection": [{
@@ -346,6 +304,19 @@
 	}, {
 		"@type": "/schema/storeSection",
 		"name": "specifications",
-		"body": "dimensions: 0x0mm"
+		"body": {
+			"dimensions": "200mm x 205mm x 35mm",
+			"material": "PLA"
+		}
+	}, {
+		"@type": "/schema/storeSection",
+		"name": "documents",
+		"body": [{
+			"title": "manual (side 1)",
+			"href": "/store/chess-etc/manual-side-1.png"
+		}, {
+			"title": "manual (side 2)",
+			"href":"/store/chess-etc/manual-side-2.png"
+		}]
 	}]
 }

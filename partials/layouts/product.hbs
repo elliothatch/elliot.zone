@@ -12,8 +12,7 @@
 			{{/each}}
 		</div>
 
-		<p>{{body}}</p>
-		<h3><span class="price">{{offers.0.price}}</span> <span class="currency">{{offers.0.priceCurrency}}</span></h3>
+		<p class="body">{{{body}}}</p>
 		<div class="chess-etc-set-colors">
 			<div class="lid">
 				<div class="checkerboard">
@@ -63,13 +62,36 @@
 			</div>
 			{{/each}}
 		</div>
+		<h3>{{#if (eq offers.0.priceCurrency "USD") }}<span class="currency-symbol">$</span>{{/if}}<span class="price">{{offers.0.price}}</span> <span class="currency">{{offers.0.priceCurrency}}</span></h3>
+		<div class="order-form">
+			<h3>Online ordering coming soon.</h3>
+		</div>
 	</div>
 </section>
 
 {{#each storeSection}}
-	<section>
+	<section class="store-section">
 		<h3>{{name}}</h3>
-		<p>{{body}}</p>
+		{{#if (isArray body)}}
+			<ul>
+				{{#each body}}
+				{{#if (and (eq (typeof this) "object") this.href)}}
+					<li>{{hal-link "document" this "_blank"}}</li>
+				{{else}}
+					<li>{{{this}}}</li>
+				{{/if}}
+				{{/each}}
+			</ul>
+		{{else if (eq (typeof body) "object")}}
+			<dl>
+			{{#each body}}
+				<dt>{{@key}}</dt>
+				<dd>{{{this}}}</dd>
+			{{/each}}
+			</dl>
+		{{else}}
+			<p>{{{body}}}</p>
+		{{/if}}
 	</section>
 {{/each}}
 
