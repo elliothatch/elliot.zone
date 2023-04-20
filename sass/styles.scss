@@ -418,6 +418,16 @@ code {
 	color: $fg-main;
 }
 
+.store.featured .card {
+	.thumbnail {
+		max-width: 500px;
+		max-height: 500px;
+		img {
+			aspect-ratio: unset;
+		}
+	}
+}
+
 .image-gallery {
 	display: flex;
 	flex-wrap: wrap;

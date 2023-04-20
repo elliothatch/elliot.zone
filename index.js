@@ -29,10 +29,16 @@ module.exports = {
 						// }
 						name: 'index',
 						options: {
-							property: '_links.profile.href'
+							property: '_links.profile.href',
+							embed: ['title', 'date-created']
 						}
 					}, {
 							name: 'resourceGraph'
+					}]
+				},
+				stateProcessors: {
+					pre: [{
+						name: 'self'
 					}]
 				}
 			},

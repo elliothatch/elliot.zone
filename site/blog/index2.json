@@ -1,0 +1,19 @@
+{
+	"title": "posts",
+	"_processors": [{
+		"name": "getIndex",
+		"options": {
+			"property": "_links.profile.href",
+			"filter": "https://schema.org/BlogPosting",
+			"to": "_links.item"
+		}
+	}, {
+		"name": "sort",
+		"options": {
+			"property": "_links.item",
+			"key": "date-created",
+			"compare": "date",
+			"descending": true
+		}
+	}]
+}

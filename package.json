@@ -7,7 +7,8 @@
   "scripts": {
     "build": "sift hypermedium -f -O elliot.zone",
     "dev": "sift hypermedium -S elliot.zone",
-    "start": "hypermedium -S elliot.zone"
+    "start": "hypermedium -S elliot.zone",
+    "debug": "sift node --inspect-brk $(which hypermedium) -S elliot.zone"
   },
   "dependencies": {
     "sanitize.css": "^13.0.0"
