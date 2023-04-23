@@ -1,0 +1,805 @@
+@use 'sanitize.css/sanitize';
+
+$main-max-width: 60em;
+
+$fg-main: #ffffff;
+$bg-main: #000000;
+
+$fg-primary: #fff154;
+$bg-primary: #000000;
+
+$fg-accent: #770000;
+$bg-accent: #ffffff;
+
+$fg-secondary: #fffbcc;
+$bg-secondary: #444444;
+
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	display: grid;
+	grid-template-rows:
+	[header-start] auto
+	[header-end main-start] 1fr
+	[main-end footer-start] auto
+	[body-end footer-end];
+
+	grid-template-columns:
+	[full-start] minmax(1em, 1fr)
+	[main-start] minmax(0, $main-max-width)
+	[main-end] minmax(1em, 1fr)
+	[full-end];
+
+
+	background: $bg-main;
+	color: $fg-main;
+
+	font-family: serif;
+	}
+
+	body > header {
+		grid-row: header;
+		grid-column: full;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		background: $fg-primary;
+		color: $bg-primary;
+
+		padding: 0.1em 0.3em;
+
+		h1 {
+			// margin: 1em;
+			margin-left: 0.5em;
+			margin-right: 0.5em;
+			hyphens: auto;
+			
+		}
+
+		a {
+			background: $fg-primary;
+			color: $bg-primary;
+
+			&:visited {
+				background: $fg-primary;
+				color: $bg-primary;
+			}
+
+			& > img {
+				height: 4em;
+				margin: .5em;
+			}
+
+&:hover, &:focus {
+background: $fg-primary;
+				color: $fg-accent;
+			}
+		}
+
+		nav {
+			flex-shrink: 2;
+			margin-left: 0.5em;
+			margin-right: 0.5em;
+
+			display: flex;
+			flex-wrap: wrap;
+
+			align-items: center;
+			align-content: center;
+
+			a {
+				margin-left: 0.4em;
+				margin-right: 0.4em;
+			}
+}
+	}
+
+	body > main {
+		grid-row: main;
+		grid-column: main;
+
+		// grid-auto-rows: max-content;
+
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
+
+	body > main > * {
+		/* remove top/bottom margins from first/last children of main since margins don't collapse between grid rows */
+		&:first-child {
+			margin-top: 0;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+
+	body > footer {
+		grid-row: footer;
+		grid-column: full;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+
+		padding-top: 1em;
+		padding-bottom: 1em;
+
+		background: $fg-primary;
+		color: $bg-primary;
+
+		a {
+			background: $fg-primary;
+			color: $bg-primary;
+			margin-left: .5em;
+			margin-right: .5em;
+
+			&:visited {
+				background: $fg-primary;
+				color: $bg-primary;
+			}
+
+			&:hover, &:focus {
+				background: $fg-primary;
+				color: $fg-accent;
+			}
+		}
+	}
+
+
+	a {
+		background: $bg-primary;
+		color: $fg-primary;
+
+		text-decoration: underline;
+
+		&:visited {
+			color: $fg-secondary;
+		}
+		&:hover, &:focus {
+			color: $fg-main;
+		}
+}
+
+h1 {
+	border: solid 3px $fg-primary;
+	padding: .1em .3em;
+}
+
+h2 {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+ul {
+	list-style-type: none;
+}
+
+article {
+	margin-bottom: 1em;
+
+	header {
+		margin-bottom: 2em;
+
+		.headline {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: nowrap;
+		}
+
+		h1 {
+			margin: 0;
+			flex-grow: 1;
+		}
+
+		h2 {
+			margin: 0;
+			margin-top: 0.2em;
+			flex-grow: 1;
+		}
+
+		.byline {
+			margin-top: 0.5em;
+			display: flex;
+			// align-items: start;
+			flex-shrink: 0;
+			flex-wrap: wrap;
+
+			margin-left: 2em;
+		}
+
+		.byline > * {
+
+			&:first-child::before { 
+				content: none;
+			}
+
+			&::before { 
+				content: '-';
+				margin-left: 0.5em;
+				margin-right: 0.5em;
+			}
+		}
+
+	}
+
+	main {
+		padding-bottom: 1em;
+		border-bottom: solid 1px $fg-primary;
+		min-height: 5em;
+
+		h1 {
+			margin-top: 1.5em;
+		}
+
+		h2 {
+			margin-top: 1.5em;
+		}
+
+		h3 {
+			margin-top: 1.5em;
+		}
+	}
+}
+
+ol.items, ul.items {
+	margin-left: 0;
+	padding-left: 0;
+
+	ol, ul {
+		padding-left: 1em;
+	}
+}
+
+ol.articles {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+
+	li {
+		article {
+			padding-bottom: 1em;
+			border-bottom: solid 1px $fg-primary;
+
+			header {
+				margin-bottom: 1em;
+			}
+
+			main {
+				margin: 1em;
+				min-height: 0;
+				border-bottom: none;
+
+				h1 {
+					font-size: 1.5em;
+				}
+
+				h2 {
+					font-size: 1.3em;
+				}
+
+				h3 {
+					font-size: 1.2em;
+				}
+
+				h4 {
+					font-size: 1.1em;
+				}
+
+				p {
+					text-align: justify;
+				}
+			}
+		}
+	}
+}
+ol.items {
+	list-style-type: none;
+	ol {
+		list-style-type: none;
+	}
+}
+
+
+button {
+	background: $fg-primary;
+	color: $bg-primary;
+}
+
+.full-width {
+	grid-column: full;
+}
+
+section {
+	margin-bottom: 1em;
+	padding: 1em;
+	border: solid 1px $fg-primary;
+}
+
+.card-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	flex-grow: 1;
+
+	margin: .1em;
+	padding: 0.5em;
+	border-left: solid 1px $fg-primary;
+
+	// &:last-child {
+	// 	border-right: solid 1px $fg-primary;
+	// }
+
+	main {
+		margin-top: 1.5em;
+		max-width: 320px; // is this what we want?
+	}
+
+	.thumbnail {
+		flex-grow: 1;
+		flex-shrink: 1;
+		max-width: 320px;
+		max-height: 320px;
+
+		img {
+			height: 100%;
+			width: 100%;
+			aspect-ratio: 1/1;
+			object-fit: cover;
+			vertical-align: middle;
+		}
+	}
+}
+
+.card-container-horiz {
+	flex-direction: column;
+
+	.card {
+		flex-direction: row;
+
+		border-top: solid 1px $fg-primary;
+
+		&:last-child {
+			border-bottom: solid 1px $fg-primary;
+		}
+
+		.thumbnail {
+			max-width: 160px;
+			max-height: 160px;
+		}
+
+		main {
+			margin: 1em 1.5em;
+		}
+	}
+}
+
+.help-keyword {
+	// font-weight: bold;
+	color: $fg-primary;
+}
+
+.ex-command {
+	display: inline-block;
+	margin: 0 0.1em;
+	padding: 0.1em;
+
+	font-family: monospace;
+	background: $bg-secondary;
+	color: $fg-primary;
+}
+
+blockquote {
+	margin-left: 0;
+	margin-right: 0;
+	padding: 0 2em;
+	background: $bg-secondary;
+	color: $fg-main;
+	border: solid 1px $fg-main;
+}
+
+pre {
+	background: $bg-secondary;
+	color: $fg-main;
+}
+
+code {
+	background: $bg-secondary;
+	color: $fg-main;
+}
+
+.store.featured .card {
+	.thumbnail {
+		max-width: 500px;
+		max-height: 500px;
+		img {
+			aspect-ratio: unset;
+		}
+	}
+}
+
+.image-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	border-bottom: solid 1px $fg-primary;
+	padding-bottom: 1em;
+	.thumbnail {
+		flex-grow: 1;
+		flex-shrink: 1;
+		max-width: 320px;
+		max-height: 320px;
+
+		img {
+			height: 100%;
+			width: 100%;
+			aspect-ratio: 1/1;
+			object-fit: cover;
+			vertical-align: middle;
+		}
+
+		&:first-child {
+			// TODO: give this responsive height without causing overflow
+			height: 460px;
+			max-height: 460px;
+			max-width: none;
+			img {
+				aspect-ratio: unset;
+				object-fit: contain;
+			}
+		}
+	}
+}
+
+.circle {
+	display: inline-block;
+	background: white;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	border: solid 1px $fg-main;
+}
+
+.multi-circle {
+	display: inline-block;
+	.semi-circle-top {
+		display: block;
+		background: white;
+		width: 24px;
+		height: 12px;
+		border-radius: 13px 13px 0 0;
+		border: solid 1px $fg-main;
+	}
+
+	.semi-circle-bottom {
+		display: block;
+		background: white;
+		width: 24px;
+		height: 12px;
+		border-radius: 0 0 13px 13px;
+		border: solid 1px $fg-main;
+	}
+}
+
+
+.offers {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+
+	.itemOffered {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		border: solid 1px $fg-primary;
+		flex-shrink: 1;
+		padding: 5px;
+
+	}
+
+	.offer.selected .itemOffered {
+		border: solid 3px $fg-main;
+		padding: 2px;
+	}
+}
+
+.product-group {
+	.body {
+		margin: 2em;
+	}
+}
+
+.store-section {
+	dl {
+		dt {
+			display: inline-block;
+			min-width: 8em;
+			&::after {
+				content: ':';
+			}
+		}
+
+		dd {
+			display: inline;
+			margin: 0;
+			&::after {
+				display: block;
+				content: '';
+			}
+		}
+	}
+}
+
+.chess-etc-set-colors {
+	display: flex;
+
+	--boxColor: #ffffff;
+	--lidColor: #ffffff;
+	--chessLightColor: #ffffff;
+	--chessDarkColor: #000000;
+	--checkersLightColor: #ffffff;
+	--checkersDarkColor: #000000;
+	--tangramsColor: #000000;
+	--diceColor: #000000;
+	
+	--checkerboardLightColor: #ffffff;
+	--checkerboardDarkColor: #000000;
+
+	background: #777777;
+
+	& > div {
+		margin: 0.5em 0;
+	}
+
+	.lid {
+		display: flex;
+		width: 320px;
+		height: 300px;
+		margin: 10px;
+		padding: 30px;
+		background: var(--lidColor);
+
+		&::before, &::after {
+			width: 10px;
+			height: 300px;
+			margin-top: -30px;
+			content: "";
+			background: var(--boxColor);
+			filter: invert(15%);
+		}
+
+		&::before {
+			margin-left: -30px;
+			margin-right: 30px;
+		}
+
+		&::after {
+			margin-left: 30px;
+			margin-right: -30px;
+		}
+
+		.checkerboard {
+			width: 100%;
+			height: 100%;
+			display: grid;
+			grid-template-columns: repeat(8, 1fr);
+			grid-template-rows: repeat(8, 1fr);
+
+			.square {
+				padding: 0;
+			}
+
+			div:nth-child(16n+1),
+			div:nth-child(16n+3),
+			div:nth-child(16n+5),
+			div:nth-child(16n+7),
+			div:nth-child(16n+10),
+			div:nth-child(16n+12),
+			div:nth-child(16n+14),
+			div:nth-child(16n+16) {
+				background: var(--checkerboardLightColor);
+			}
+
+			div:nth-child(16n+2),
+			div:nth-child(16n+4),
+			div:nth-child(16n+6),
+			div:nth-child(16n+8),
+			div:nth-child(16n+9),
+			div:nth-child(16n+11),
+			div:nth-child(16n+13),
+			div:nth-child(16n+15) {
+				background: var(--checkerboardDarkColor);
+			}
+
+			// this overrides the nth-child rules.
+			// @for $i from 0 to 64 {
+			// 	div.sq-#{$i} {
+			// 		background: var(--sq-#{$i}-color);
+			// 	}
+			// }
+		}
+	}
+
+	.box {
+		width: 300px;
+		height: 300px;
+		position: relative;
+
+		position: relative;
+
+		& > div {
+			position: absolute;
+		}
+
+		.box-bg {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+
+			background: var(--boxColor) !important;
+			filter: invert(15%);
+		}
+
+		.chess-light svg path {
+			fill: var(--chessLightColor) !important;
+		}
+
+		.chess-dark svg path {
+			fill: var(--chessDarkColor) !important;
+		}
+
+		.checkers-light svg path {
+			fill: var(--checkersLightColor) !important;
+		}
+		.checkers-dark svg path {
+			fill: var(--checkersDarkColor) !important;
+		}
+		.tangrams svg path {
+			fill: var(--tangramsColor) !important;
+		}
+		.dice svg {
+			rect {
+				fill: var(--diceColor) !important;
+			}
+			path {
+				fill: var(--diceColor) !important;
+				filter: invert(100%);
+			}
+		}
+	}
+
+	/*
+	.box {
+		width: 300px;
+		height: 300px;
+		position: relative;
+
+		background: var(--boxColor);
+		.chess-pieces {
+			position: absolute;
+			& > div {
+				margin: 0.5em 0;
+			}
+			.pawns, .pieces {
+				display: flex;
+				justify-content: center;
+
+				height: calc(300px / 8);
+				width: 300px;
+
+				& > div {
+					flex-grow: 1;
+				}
+				img, svg {
+					width: 100%;
+					height: auto;
+					max-height: 30px;
+				}
+
+				.pawn {
+						img, svg {
+						max-height: 25px;
+					}
+				}
+			}
+
+			.chess-pieces-light > div {
+				img {
+					filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0) brightness(100%) contrast(100%);
+				}
+
+				svg {
+					path {
+						fill: var(--chessLightColor) !important;
+					}
+				}
+			}
+
+			.chess-pieces-dark > div {
+				img {
+					filter: brightness(0) saturate(100%);
+				}
+
+				svg {
+					path {
+						fill: var(--chessDarkColor) !important;
+					}
+				}
+			}
+		}
+	}
+	*/
+}
+
+	// .chess-etc-set-colors .checkerboard .sq-0
+
+	.elliot-zone-logo {
+		display: flex;
+		justify-content: center;
+
+		margin: 2em;
+
+		// white white
+		filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0) brightness(100%) contrast(100%);
+
+		img {
+			width: 100%;
+			max-width: 600px;
+			height: auto;
+}
+	}
+
+	.under-construction-page {
+		.under-construction {
+			h1 {
+				border: none;
+				font-size: 3em;
+				text-align: center;
+			}
+
+			&:before, &:after {
+content: '';
+				display: block;
+				width: 100%;
+				height: 4em;
+				margin: 2em 0;
+				background: repeating-linear-gradient(
+					45deg,
+					$bg-main,
+					$bg-main 40px,
+					$fg-primary 40px,
+					$fg-primary 80px
+				);
+
+				border: solid 3px $fg-primary;
+			}
+		}
+
+		.coming-soon {
+			text-align: center;
+			.chess-etc-image {
+				margin: 1em;
+				display: flex;
+				justify-content: center;
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+	}

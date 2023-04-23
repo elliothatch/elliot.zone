@@ -7,7 +7,12 @@ module.exports = {
 	dependencies: ['core', 'sass', 'markdown', 'favicons'],
 	moduleFactory: (options) => {
 		return {
-			files: ['dist', 'images', {from: 'scripts', to: '/scripts'}],
+			files: [
+				'dist',
+				'images',
+				{from: 'scripts', to: '/scripts'},
+				{from: 'fonts', to: '/fonts'}
+			],
 			hypermedia: {
 				sitePaths: ['site'],
 				processors: {
@@ -103,7 +108,8 @@ module.exports = {
 							css: ['dist/css/styles.css'],
 							sourceMap: ['dist/css/styles.css.map'],
 						}
-					}]
+					}],
+					watchFiles: ['sass']
 				}
 			}
 		};

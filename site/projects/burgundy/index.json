@@ -8,6 +8,7 @@
 
 	"title": "burgundy color scheme",
 	"body": "burgundy is a dark color scheme",
+	"itemListOrder": "Unordered",
 	"itemListElement": [{
 		"@type": "https://schema.org/CreativeWork",
 		"name": "burgundy.vim",

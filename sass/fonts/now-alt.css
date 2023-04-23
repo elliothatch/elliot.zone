@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Now Alt';
+    src: url('/fonts/now-alt/nowalt-black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Now Alt';
+    src: url('/fonts/now-alt/nowalt-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Now Alt';
+    src: url('/fonts/now-alt/nowalt-light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Now Alt';
+    src: url('/fonts/now-alt/nowalt-medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Now Alt';
+    src: url('/fonts/now-alt/nowalt-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Now Alt';
+    src: url('/fonts/now-alt/nowalt-thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+
+}

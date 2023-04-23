@@ -1,0 +1,23 @@
+@use 'theme';
+
+/* make an element full-width in the main grid, while keeping its children constrained to the content width.
+* works by making the element a nested grid with the same columns as the main grid
+*/
+@mixin full-width-grid {
+	grid-column: full;
+
+	display: grid;
+	grid-template-columns:
+	[full-start] minmax(1em, 1fr)
+	[main-start] minmax(0, theme.$content-max-width)
+	[main-end] minmax(1em, 1fr)
+	[full-end];
+
+	// behaves like auto, but doesn't extend elements to fill empty grid space
+	grid-auto-rows: minmax(min-content, max-content);
+	// justify-content: start;
+
+	& > * {
+		grid-column: main;
+	}
+}

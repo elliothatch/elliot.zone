@@ -1,0 +1,351 @@
+@use 'fonts/now-alt';
+@use 'theme';
+@use 'util';
+
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	display: grid;
+	// restricted width of main. use when subgrid widely implemented
+	// grid-template-rows:
+	// [header-start] auto
+	// [header-end main-start] 1fr
+	// [main-end footer-start] auto
+	// [body-end footer-end];
+
+	// grid-template-columns:
+	// [full-start] minmax(1em, 1fr)
+	// [main-start] minmax(0, theme.$content-max-width)
+	// [main-end] minmax(1em, 1fr)
+	// [full-end];
+
+	grid-template-rows:
+	[header-start] auto
+	[header-end main-start] 1fr
+	[main-end footer-start] auto
+	[body-end footer-end];
+
+	grid-template-columns:
+	[full-start] minmax(1em, 1fr)
+	[full-end];
+
+	border-left: solid 5px theme.$primary-fg;
+	border-right: solid 5px theme.$primary-fg;
+
+
+	background: theme.$main-bg;
+	color: theme.$main-fg;
+
+	font-family: theme.$body-font-family;
+	font-weight: theme.$body-font-weight;
+}
+
+body > header {
+	grid-row: header;
+	grid-column: full;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	background: theme.$primary-fg;
+	color: theme.$primary-bg;
+
+	padding: 0.1em 0.3em;
+
+	h1 {
+		// margin: 1em;
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+		hyphens: auto;
+
+	}
+
+	a {
+		background: theme.$primary-fg;
+		color: theme.$primary-bg;
+
+		&:visited {
+			background: theme.$primary-fg;
+			color: theme.$primary-bg;
+		}
+
+		& > img {
+			height: 4em;
+			margin: .5em;
+		}
+
+		&:hover, &:focus {
+			background: theme.$primary-fg;
+			color: theme.$accent-fg;
+		}
+	}
+
+	nav {
+		flex-shrink: 2;
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+
+		display: flex;
+		flex-wrap: wrap;
+
+		align-items: center;
+		align-content: center;
+
+		a {
+			margin-left: 0.4em;
+			margin-right: 0.4em;
+		}
+	}
+}
+
+body > main {
+	grid-row: main;
+
+	@include util.full-width-grid;
+
+	// margin-top: 2em;
+	// margin-bottom: 2em;
+}
+
+body > main > * {
+	/* put everything in the main column by default. full-width elements (e.g. headers) manually set their columns to full width */
+	grid-column: main;
+	/* remove top/bottom margins from first/last children of main since margins don't collapse between grid rows */
+	// &:first-child {
+		// margin-top: 0;
+	// }
+	// &:last-child {
+		// margin-bottom: 0;
+	// }
+}
+
+body > footer {
+	grid-row: footer;
+	grid-column: full;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+
+	margin-top: 2em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+
+	background: theme.$primary-fg;
+	color: theme.$primary-bg;
+
+	a {
+		background: theme.$primary-fg;
+		color: theme.$primary-bg;
+		margin-left: .5em;
+		margin-right: .5em;
+
+		&:visited {
+			background: theme.$primary-fg;
+			color: theme.$primary-bg;
+		}
+
+		&:hover, &:focus {
+			background: theme.$primary-fg;
+			color: theme.$accent-fg;
+		}
+	}
+}
+
+/* typography */
+body {
+	font-size: 1.2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: theme.$header-font-family;
+	font-weight: theme.$header-font-weight;
+	text-align: center;
+}
+
+/* colors */
+a {
+	// background: theme.$primary-bg;
+	// color: theme.$primary-fg;
+
+	text-decoration: underline;
+
+	&:visited {
+		color: theme.$secondary-fg;
+	}
+	&:hover, &:focus {
+		color: theme.$main-fg;
+	}
+}
+
+
+h1 {
+	font-size: 4rem;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+}
+
+
+h2 {
+	font-size: 2.5rem;
+	margin-top: 0.15em;
+	margin-bottom: 0.15em;
+}
+
+ul {
+	list-style-type: none;
+}
+
+article {
+	margin-top: 2em;
+	margin-bottom: 1em;
+
+	header {
+		margin-bottom: 2em;
+
+		.headline {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: nowrap;
+		}
+
+		h1 {
+			margin: 0;
+			flex-grow: 1;
+		}
+
+		h2 {
+			margin: 0;
+			margin-top: 0.2em;
+			flex-grow: 1;
+		}
+
+		.byline {
+			margin-top: 0.5em;
+			display: flex;
+			// align-items: start;
+			flex-shrink: 0;
+			flex-wrap: wrap;
+
+			margin-left: 2em;
+		}
+
+		.byline > * {
+
+			&:first-child::before { 
+				content: none;
+			}
+
+			&::before { 
+				content: '-';
+				margin-left: 0.5em;
+				margin-right: 0.5em;
+			}
+		}
+
+	}
+
+	main {
+		padding-bottom: 1em;
+		// border-bottom: solid 1px theme.$primary-fg;
+		// background: theme.$secondary-bg;
+		min-height: 5em;
+
+		h1 {
+			margin-top: 1.5em;
+		}
+
+		h2 {
+			margin-top: 1.5em;
+		}
+
+		h3 {
+			margin-top: 1.5em;
+		}
+	}
+}
+
+ol.items, ul.items {
+	margin-left: 0;
+	padding-left: 0;
+
+	ol, ul {
+		padding-left: 1em;
+	}
+}
+
+ol.articles {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+
+	li {
+		article {
+			padding-bottom: 1em;
+			// border-bottom: solid 1px theme.$primary-fg;
+
+			header {
+				margin-bottom: 1em;
+			}
+
+			main {
+				margin: 1em;
+				min-height: 0;
+				// border-bottom: none;
+
+				h1 {
+					font-size: 1.5rem;
+				}
+
+				h2 {
+					font-size: 1.3rem;
+				}
+
+				h3 {
+					font-size: 1.2rem;
+				}
+
+				h4 {
+					font-size: 1.1rem;
+				}
+
+				p {
+					text-align: justify;
+				}
+			}
+		}
+	}
+}
+ol.items {
+	list-style-type: none;
+	ol {
+		list-style-type: none;
+	}
+}
+
+
+button {
+	background: theme.$primary-fg;
+	color: theme.$primary-bg;
+}
+
+.full-width {
+	grid-column: full;
+}
+
+section {
+	margin: 0;
+	// margin-bottom: 1em;
+	padding: 1em;
+	// border: solid 1px theme.$primary-fg;
+	
+}
+
+body > main > section {
+	@include util.full-width-grid;
+	&:nth-child(odd) {
+		background: theme.$secondary-bg;
+	}
+}
