@@ -24,7 +24,13 @@
 
 	main {
 		margin-top: 1.5em;
+		width: 100%;
 		max-width: 320px; // is this what we want?
+
+		.title {
+			text-align: center;
+			font-size: 1.5rem;
+		}
 	}
 
 	.thumbnail {
