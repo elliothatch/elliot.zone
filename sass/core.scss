@@ -2,6 +2,11 @@
 @use 'theme';
 @use 'util';
 
+p, li, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
 html {
 	height: 100%;
 }
@@ -29,7 +34,7 @@ body {
 	[body-end footer-end];
 
 	grid-template-columns:
-	[full-start] minmax(1em, 1fr)
+	[full-start] 1fr
 	[full-end];
 
 	border-left: solid 5px theme.$primary-fg;
@@ -41,11 +46,15 @@ body {
 
 	font-family: theme.$body-font-family;
 	font-weight: theme.$body-font-weight;
+	line-height: 1.5;
 }
 
 body > header {
 	grid-row: header;
 	grid-column: full;
+
+	// display: grid;
+	// grid-template-columns: minmax(100px, 1fr) 1fr;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -68,12 +77,13 @@ body > header {
 		color: theme.$primary-bg;
 
 		&:visited {
-			background: theme.$primary-fg;
-			color: theme.$primary-bg;
+			// background: theme.$primary-fg;
+			color: theme.$secondary-fg;
 		}
 
 		& > img {
-			height: 4em;
+			max-height: 4em;
+			max-width: 100%;
 			margin: .5em;
 		}
 
@@ -127,6 +137,7 @@ body > footer {
 	grid-column: full;
 	width: 100%;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 
 	margin-top: 2em;
@@ -168,12 +179,12 @@ h1, h2, h3, h4, h5, h6 {
 /* colors */
 a {
 	// background: theme.$primary-bg;
-	// color: theme.$primary-fg;
+	color: theme.$secondary-fg;
 
 	text-decoration: underline;
 
 	&:visited {
-		color: theme.$secondary-fg;
+		color: theme.$primary-fg;
 	}
 	&:hover, &:focus {
 		color: theme.$main-fg;
@@ -338,7 +349,7 @@ button {
 section {
 	margin: 0;
 	// margin-bottom: 1em;
-	padding: 1em;
+	padding: util.responsive(1em);
 	// border: solid 1px theme.$primary-fg;
 	
 }
@@ -347,5 +358,9 @@ body > main > section {
 	@include util.full-width-grid;
 	&:nth-child(odd) {
 		background: theme.$secondary-bg;
+
+		.card {
+			background: theme.$main-bg;
+		}
 	}
 }

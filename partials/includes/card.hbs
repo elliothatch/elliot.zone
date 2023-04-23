@@ -1,4 +1,4 @@
-<div class="card">
+<li class="card">
 	{{#if thumbnailUrl }}
 	<div class="thumbnail">
 		<a href="{{url}}"><picture>
@@ -8,8 +8,6 @@
 		</picture></a>
 	</div>
 	{{/if}}
-	<main>
-		<a class="title" href="{{url}}">{{name}}</a>
-		<p>{{about}}</p>
-	</main>
-</div>
+	<h3 class="name"><a href="{{url}}">{{name}}</a></h3>
+	<p class="about">{{about}}</p>
+</li>

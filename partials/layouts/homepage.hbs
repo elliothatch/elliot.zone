@@ -4,25 +4,25 @@
 </section>
 <section class="store featured">
 	{{!-- <h1>{{hal-link 'store' _links.store}}</h1> --}}
-	<h1>store</h1>
-	<div class="card-container">
+	<h2>store</h2>
+	<ul class="card-container">
 		{{#each store}}
 			{{> includes/card.hbs this}}
 		{{/each}}
-	</div>
+	</ul>
 </section>
 <section class="projects featured">
-	<h1>projects</h1>
-	<div class="card-container">
+	<h2>projects</h2>
+	<ul class="card-container">
 	{{#each projects}}
 		{{#unless this.hidden}}
 			{{> includes/card.hbs this}}
 		{{/unless}}
 	{{/each}}
-	</div>
+	</ul>
 </section>
 <section class="code-section featured">
-	<h1>code</h1>
+	<h2>code</h2>
 	<ul class="items">
 	{{#each code}}
 		<li><a href="{{url}}">{{name}}</a> - {{about}}</li>
@@ -31,7 +31,7 @@
 </section>
 {{!--
 <section class="blog featured">
-	<h1>{{hal-link 'blog' _links.blog}}</h1>
+	<h2>{{hal-link 'blog' _links.blog}}</h2>
 	<ol class="card-container-horiz items articles">
 		{{#each blog}}
 		<li>
@@ -47,7 +47,7 @@
 --}}
 {{!--
 <section>
-	<h1>links</h1>
+	<h2>links</h2>
 	<ul class="items">
 		{{#each _links.socialMedia}}
 			<li>{{hal-link "socialMedia" this}}</li>

@@ -1,328 +1,328 @@
 @use 'theme';
 
-.store.featured .card {
-	.thumbnail {
-		max-width: 500px;
-		max-height: 500px;
-		img {
-			aspect-ratio: unset;
-		}
-	}
-}
+// .store.featured .card {
+// 	.thumbnail {
+// 		max-width: 500px;
+// 		max-height: 500px;
+// 		img {
+// 			aspect-ratio: unset;
+// 		}
+// 	}
+// }
 
-.image-gallery {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	// border-bottom: solid 1px theme.$primary-fg;
-	padding-bottom: 1em;
-	.thumbnail {
-		flex-grow: 1;
-		flex-shrink: 1;
-		max-width: 320px;
-		max-height: 320px;
+// .image-gallery {
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	justify-content: center;
+// 	align-items: center;
+// 	// border-bottom: solid 1px theme.$primary-fg;
+// 	padding-bottom: 1em;
+// 	.thumbnail {
+// 		flex-grow: 1;
+// 		flex-shrink: 1;
+// 		max-width: 320px;
+// 		max-height: 320px;
 
-		img {
-			height: 100%;
-			width: 100%;
-			aspect-ratio: 1/1;
-			object-fit: cover;
-			vertical-align: middle;
-		}
+// 		img {
+// 			height: 100%;
+// 			width: 100%;
+// 			aspect-ratio: 1/1;
+// 			object-fit: cover;
+// 			vertical-align: middle;
+// 		}
 
-		&:first-child {
-			// TODO: give this responsive height without causing overflow
-			height: 460px;
-			max-height: 460px;
-			max-width: none;
-			img {
-				aspect-ratio: unset;
-				object-fit: contain;
-			}
-		}
-	}
-}
+// 		&:first-child {
+// 			// TODO: give this responsive height without causing overflow
+// 			height: 460px;
+// 			max-height: 460px;
+// 			max-width: none;
+// 			img {
+// 				aspect-ratio: unset;
+// 				object-fit: contain;
+// 			}
+// 		}
+// 	}
+// }
 
-.circle {
-	display: inline-block;
-	background: white;
-	width: 24px;
-	height: 24px;
-	border-radius: 50%;
-	border: solid 1px theme.$main-fg;
-}
+// .circle {
+// 	display: inline-block;
+// 	background: white;
+// 	width: 24px;
+// 	height: 24px;
+// 	border-radius: 50%;
+// 	border: solid 1px theme.$main-fg;
+// }
 
-.multi-circle {
-	display: inline-block;
-	.semi-circle-top {
-		display: block;
-		background: white;
-		width: 24px;
-		height: 12px;
-		border-radius: 13px 13px 0 0;
-		border: solid 1px theme.$main-fg;
-	}
+// .multi-circle {
+// 	display: inline-block;
+// 	.semi-circle-top {
+// 		display: block;
+// 		background: white;
+// 		width: 24px;
+// 		height: 12px;
+// 		border-radius: 13px 13px 0 0;
+// 		border: solid 1px theme.$main-fg;
+// 	}
 
-	.semi-circle-bottom {
-		display: block;
-		background: white;
-		width: 24px;
-		height: 12px;
-		border-radius: 0 0 13px 13px;
-		border: solid 1px theme.$main-fg;
-	}
-}
+// 	.semi-circle-bottom {
+// 		display: block;
+// 		background: white;
+// 		width: 24px;
+// 		height: 12px;
+// 		border-radius: 0 0 13px 13px;
+// 		border: solid 1px theme.$main-fg;
+// 	}
+// }
 
 
-.offers {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
+// .offers {
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	justify-content: center;
+// 	align-items: center;
 
-	.itemOffered {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+// 	.itemOffered {
+// 		display: flex;
+// 		justify-content: center;
+// 		align-items: center;
 
-		border: solid 1px theme.$primary-fg;
-		flex-shrink: 1;
-		padding: 5px;
+// 		border: solid 1px theme.$primary-fg;
+// 		flex-shrink: 1;
+// 		padding: 5px;
 
-	}
+// 	}
 
-	.offer.selected .itemOffered {
-		border: solid 3px theme.$main-fg;
-		padding: 2px;
-	}
-}
+// 	.offer.selected .itemOffered {
+// 		border: solid 3px theme.$main-fg;
+// 		padding: 2px;
+// 	}
+// }
 
-.product-group {
-	.body {
-		margin: 2em;
-	}
-}
+// .product-group {
+// 	.body {
+// 		margin: 2em;
+// 	}
+// }
 
-.store-section {
-	dl {
-		dt {
-			display: inline-block;
-			min-width: 8em;
-			&::after {
-				content: ':';
-			}
-		}
+// .store-section {
+// 	dl {
+// 		dt {
+// 			display: inline-block;
+// 			min-width: 8em;
+// 			&::after {
+// 				content: ':';
+// 			}
+// 		}
 
-		dd {
-			display: inline;
-			margin: 0;
-			&::after {
-				display: block;
-				content: '';
-			}
-		}
-	}
-}
+// 		dd {
+// 			display: inline;
+// 			margin: 0;
+// 			&::after {
+// 				display: block;
+// 				content: '';
+// 			}
+// 		}
+// 	}
+// }
 
-.chess-etc-set-colors {
-	display: flex;
+// .chess-etc-set-colors {
+// 	display: flex;
 
-	--boxColor: #ffffff;
-	--lidColor: #ffffff;
-	--chessLightColor: #ffffff;
-	--chessDarkColor: #000000;
-	--checkersLightColor: #ffffff;
-	--checkersDarkColor: #000000;
-	--tangramsColor: #000000;
-	--diceColor: #000000;
+// 	--boxColor: #ffffff;
+// 	--lidColor: #ffffff;
+// 	--chessLightColor: #ffffff;
+// 	--chessDarkColor: #000000;
+// 	--checkersLightColor: #ffffff;
+// 	--checkersDarkColor: #000000;
+// 	--tangramsColor: #000000;
+// 	--diceColor: #000000;
 
-	--checkerboardLightColor: #ffffff;
-	--checkerboardDarkColor: #000000;
+// 	--checkerboardLightColor: #ffffff;
+// 	--checkerboardDarkColor: #000000;
 
-	background: #777777;
+// 	background: #777777;
 
-	& > div {
-		margin: 0.5em 0;
-	}
+// 	& > div {
+// 		margin: 0.5em 0;
+// 	}
 
-	.lid {
-		display: flex;
-		width: 320px;
-		height: 300px;
-		margin: 10px;
-		padding: 30px;
-		background: var(--lidColor);
+// 	.lid {
+// 		display: flex;
+// 		width: 320px;
+// 		height: 300px;
+// 		margin: 10px;
+// 		padding: 30px;
+// 		background: var(--lidColor);
 
-		&::before, &::after {
-			width: 10px;
-			height: 300px;
-			margin-top: -30px;
-			content: "";
-			background: var(--boxColor);
-			filter: invert(15%);
-		}
+// 		&::before, &::after {
+// 			width: 10px;
+// 			height: 300px;
+// 			margin-top: -30px;
+// 			content: "";
+// 			background: var(--boxColor);
+// 			filter: invert(15%);
+// 		}
 
-		&::before {
-			margin-left: -30px;
-			margin-right: 30px;
-		}
+// 		&::before {
+// 			margin-left: -30px;
+// 			margin-right: 30px;
+// 		}
 
-		&::after {
-			margin-left: 30px;
-			margin-right: -30px;
-		}
+// 		&::after {
+// 			margin-left: 30px;
+// 			margin-right: -30px;
+// 		}
 
-		.checkerboard {
-			width: 100%;
-			height: 100%;
-			display: grid;
-			grid-template-columns: repeat(8, 1fr);
-			grid-template-rows: repeat(8, 1fr);
+// 		.checkerboard {
+// 			width: 100%;
+// 			height: 100%;
+// 			display: grid;
+// 			grid-template-columns: repeat(8, 1fr);
+// 			grid-template-rows: repeat(8, 1fr);
 
-			.square {
-				padding: 0;
-			}
+// 			.square {
+// 				padding: 0;
+// 			}
 
-			div:nth-child(16n+1),
-				div:nth-child(16n+3),
-				div:nth-child(16n+5),
-				div:nth-child(16n+7),
-				div:nth-child(16n+10),
-				div:nth-child(16n+12),
-				div:nth-child(16n+14),
-				div:nth-child(16n+16) {
-				background: var(--checkerboardLightColor);
-			}
+// 			div:nth-child(16n+1),
+// 				div:nth-child(16n+3),
+// 				div:nth-child(16n+5),
+// 				div:nth-child(16n+7),
+// 				div:nth-child(16n+10),
+// 				div:nth-child(16n+12),
+// 				div:nth-child(16n+14),
+// 				div:nth-child(16n+16) {
+// 				background: var(--checkerboardLightColor);
+// 			}
 
-			div:nth-child(16n+2),
-				div:nth-child(16n+4),
-				div:nth-child(16n+6),
-				div:nth-child(16n+8),
-				div:nth-child(16n+9),
-				div:nth-child(16n+11),
-				div:nth-child(16n+13),
-				div:nth-child(16n+15) {
-				background: var(--checkerboardDarkColor);
-			}
+// 			div:nth-child(16n+2),
+// 				div:nth-child(16n+4),
+// 				div:nth-child(16n+6),
+// 				div:nth-child(16n+8),
+// 				div:nth-child(16n+9),
+// 				div:nth-child(16n+11),
+// 				div:nth-child(16n+13),
+// 				div:nth-child(16n+15) {
+// 				background: var(--checkerboardDarkColor);
+// 			}
 
-			// this overrides the nth-child rules.
-			// @for $i from 0 to 64 {
-			// 	div.sq-#{$i} {
-			// 		background: var(--sq-#{$i}-color);
-			// 	}
-			// }
-		}
-	}
+// 			// this overrides the nth-child rules.
+// 			// @for $i from 0 to 64 {
+// 			// 	div.sq-#{$i} {
+// 			// 		background: var(--sq-#{$i}-color);
+// 			// 	}
+// 			// }
+// 		}
+// 	}
 
-	.box {
-		width: 300px;
-		height: 300px;
-		position: relative;
+// 	.box {
+// 		width: 300px;
+// 		height: 300px;
+// 		position: relative;
 
-		position: relative;
+// 		position: relative;
 
-		& > div {
-			position: absolute;
-		}
+// 		& > div {
+// 			position: absolute;
+// 		}
 
-		.box-bg {
-			width: 100%;
-			height: 100%;
-			margin: 0;
-			padding: 0;
+// 		.box-bg {
+// 			width: 100%;
+// 			height: 100%;
+// 			margin: 0;
+// 			padding: 0;
 
-			background: var(--boxColor) !important;
-			filter: invert(15%);
-		}
+// 			background: var(--boxColor) !important;
+// 			filter: invert(15%);
+// 		}
 
-		.chess-light svg path {
-			fill: var(--chessLightColor) !important;
-		}
+// 		.chess-light svg path {
+// 			fill: var(--chessLightColor) !important;
+// 		}
 
-		.chess-dark svg path {
-			fill: var(--chessDarkColor) !important;
-		}
+// 		.chess-dark svg path {
+// 			fill: var(--chessDarkColor) !important;
+// 		}
 
-		.checkers-light svg path {
-			fill: var(--checkersLightColor) !important;
-		}
-		.checkers-dark svg path {
-			fill: var(--checkersDarkColor) !important;
-		}
-		.tangrams svg path {
-			fill: var(--tangramsColor) !important;
-		}
-		.dice svg {
-			rect {
-				fill: var(--diceColor) !important;
-			}
-			path {
-				fill: var(--diceColor) !important;
-				filter: invert(100%);
-			}
-		}
-	}
+// 		.checkers-light svg path {
+// 			fill: var(--checkersLightColor) !important;
+// 		}
+// 		.checkers-dark svg path {
+// 			fill: var(--checkersDarkColor) !important;
+// 		}
+// 		.tangrams svg path {
+// 			fill: var(--tangramsColor) !important;
+// 		}
+// 		.dice svg {
+// 			rect {
+// 				fill: var(--diceColor) !important;
+// 			}
+// 			path {
+// 				fill: var(--diceColor) !important;
+// 				filter: invert(100%);
+// 			}
+// 		}
+// 	}
 
-	/*
-.box {
-width: 300px;
-height: 300px;
-position: relative;
+// 	/*
+// .box {
+// width: 300px;
+// height: 300px;
+// position: relative;
 
-background: var(--boxColor);
-.chess-pieces {
-position: absolute;
-& > div {
-margin: 0.5em 0;
-}
-.pawns, .pieces {
-display: flex;
-justify-content: center;
+// background: var(--boxColor);
+// .chess-pieces {
+// position: absolute;
+// & > div {
+// margin: 0.5em 0;
+// }
+// .pawns, .pieces {
+// display: flex;
+// justify-content: center;
 
-height: calc(300px / 8);
-width: 300px;
+// height: calc(300px / 8);
+// width: 300px;
 
-& > div {
-flex-grow: 1;
-}
-img, svg {
-width: 100%;
-height: auto;
-max-height: 30px;
-}
+// & > div {
+// flex-grow: 1;
+// }
+// img, svg {
+// width: 100%;
+// height: auto;
+// max-height: 30px;
+// }
 
-.pawn {
-img, svg {
-max-height: 25px;
-}
-}
-}
+// .pawn {
+// img, svg {
+// max-height: 25px;
+// }
+// }
+// }
 
-.chess-pieces-light > div {
-img {
-filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0) brightness(100%) contrast(100%);
-}
+// .chess-pieces-light > div {
+// img {
+// filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0) brightness(100%) contrast(100%);
+// }
 
-svg {
-path {
-fill: var(--chessLightColor) !important;
-}
-}
-}
+// svg {
+// path {
+// fill: var(--chessLightColor) !important;
+// }
+// }
+// }
 
-.chess-pieces-dark > div {
-img {
-filter: brightness(0) saturate(100%);
-}
+// .chess-pieces-dark > div {
+// img {
+// filter: brightness(0) saturate(100%);
+// }
 
-svg {
-path {
-fill: var(--chessDarkColor) !important;
-}
-}
-}
-}
-}
-	*/
-}
+// svg {
+// path {
+// fill: var(--chessDarkColor) !important;
+// }
+// }
+// }
+// }
+// }
+// 	*/
+// }

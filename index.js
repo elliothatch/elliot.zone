@@ -74,6 +74,18 @@ module.exports = {
 							"href": "/about",
 							"title": "About"
 						},
+						"test1": {
+							"href": "/test1",
+							"title": "test1"
+						},
+						"test2": {
+							"href": "/test2",
+							"title": "test2"
+						},
+						"test3": {
+							"href": "/test3",
+							"title": "test3"
+						},
 					},
 					footerLinks: [{
 						"title": "github",

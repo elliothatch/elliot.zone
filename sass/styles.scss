@@ -10,12 +10,12 @@ section.intro {
 	background: theme.$secondary-bg;
 
 	padding-top: 2em;
-	padding-bottom: 4em;
+	padding-bottom: util.responsive(4em);
 
 	h1 {
 		color: theme.$accent-fg;
 		background: none;
-		font-size: 10rem;
+		font-size: util.responsive(10rem);
 		font-weight: 300;
 		margin: 0;
 		padding: 0;
@@ -27,7 +27,7 @@ section.intro {
 	}
 
 	p {
-		font-size: 3rem;
+		font-size: util.responsive(3rem);
 		font-weight: 300;
 		margin: 0;
 		padding: 0;
