@@ -1,6 +1,14 @@
 <section class="intro">
 	<h1>{{title}}</h1>
 	<p>{{subtitle}}</p>
+
+	<img class="site-logo" src="/elliot-zone-logo.svg" alt="{{_site.title}}">
+	<nav>
+		{{#each _site.navLinks}}
+			{{hal-link @key this}}
+		{{/each}}
+	</nav>
+	</div>
 </section>
 <section class="store featured">
 	{{!-- <h1>{{hal-link 'store' _links.store}}</h1> --}}

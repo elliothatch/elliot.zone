@@ -1,6 +1,6 @@
 {
 	"title": "hello!",
-	"subtitle": "welcome to elliot.zone",
+	"subtitle": "welcome to",
 	"store": [{
 		"@type": "https://schema.org/Product",
 		"name": "chess etc.",

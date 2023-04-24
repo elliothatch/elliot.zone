@@ -52,12 +52,14 @@ body {
 body > header {
 	grid-row: header;
 	grid-column: full;
-
 	// display: grid;
 	// grid-template-columns: minmax(100px, 1fr) 1fr;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+
+	// display: grid;
+	// grid-template-columns: minmax(100px, 1fr) 1fr;
+	// align-items: center;
 
 	background: theme.$primary-fg;
 	color: theme.$primary-bg;

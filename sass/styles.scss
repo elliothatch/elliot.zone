@@ -5,33 +5,87 @@
 @use 'store';
 @use 'util';
 
-section.intro {
-	@include util.full-width-grid;
-	background: theme.$secondary-bg;
 
-	padding-top: 2em;
-	padding-bottom: util.responsive(4em);
-
-	h1 {
-		color: theme.$accent-fg;
-		background: none;
-		font-size: util.responsive(10rem);
-		font-weight: 300;
-		margin: 0;
-		padding: 0;
-		text-align: left;
-
-		@media(max-width: 799px) {
-			// font-size: 22vw;
-		}
+.\/schema\/homepage {
+	& > header {
+		display: none;
 	}
 
-	p {
-		font-size: util.responsive(3rem);
-		font-weight: 300;
-		margin: 0;
-		padding: 0;
-		text-align: right;
+	section.intro {
+		display: grid;
+		height: 70vh;
+
+		grid-template-rows:
+		1fr
+		[title-start] auto
+		[title-end subtitle-start] auto
+		[subtitle-end] minmax(2em, 2fr)
+		[logo-start] minmax(150px, 300px)
+		[logo-end] minmax(2em, 2fr)
+		[nav-start] auto
+		[nav-end] 1fr;
+
+		grid-template-columns:
+			[full-start] 1fr
+			[title-start] 1fr
+			[subtitle-start] 1fr
+			5fr
+			[full-end];
+
+		justify-items: center;
+
+		background: theme.$secondary-bg;
+
+		padding-top: 2em;
+		padding-bottom: util.responsive(4em);
+
+		h1 {
+			grid-row: title;
+			grid-column: title-start / full-end;
+			justify-self: start;
+
+			color: theme.$accent-fg;
+			background: none;
+			font-size: util.responsive(10rem);
+			font-weight: 300;
+			margin: 0;
+			padding: 0;
+			text-align: left;
+
+			@media(max-width: 799px) {
+				// font-size: 22vw;
+			}
+		}
+
+		p {
+			grid-row: subtitle;
+			grid-column: subtitle-start / full-end;
+			justify-self: start;
+
+			font-size: util.responsive(3rem);
+			font-weight: 300;
+			margin: 0;
+			padding: 0;
+			text-align: right;
+		}
+
+		.site-logo {
+			grid-row: logo;
+			grid-column: full;
+			max-width: 100%;
+			max-height: none;
+			// width: 100%;
+			height: 100%;
+		}
+
+		nav {
+			grid-row: nav;
+			grid-column: full;
+			font-size: 2rem;
+				a {
+				padding-inline: 0.5em;
+			}
+		}
 	}
 }
 
