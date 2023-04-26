@@ -14,17 +14,18 @@
 		"name": "burgundy.vim",
 		"url": "https://github.com/elliothatch/burgundy.vim",
 		"about": "neovim colorscheme",
-		"thumbnailUrl": "https://raw.githubusercontent.com/elliothatch/burgundy.vim/master/screenshots/burgundy.png"
+		"thumbnailUrl": "/projects/burgundy/burgundy-vim.png"
 	}, {
 		"@type": "https://schema.org/CreativeWork",
 		"name": "burgundywine",
 		"url": "https://addons.mozilla.org/en-US/firefox/addon/burgundywine/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search",
 		"about": "firefox theme",
-		"thumbnailUrl": "https://addons.mozilla.org/user-media/version-previews/full/3851/3851086.svg?modified=1623522803"
+		"thumbnailUrl": "/projects/burgundy/burgundy-firefox.svg"
 	}, {
 		"@type": "https://schema.org/CreativeWork",
 		"name": "burgundy terminal",
 		"url": "https://github.com/elliothatch/dotfiles/blob/master/core/.config/alacritty/alacritty.yml",
-		"about": "alacritty theme"
+		"about": "alacritty theme",
+		"thumbnailUrl": "/projects/burgundy/burgundy-terminal.png"
 	}]
 }

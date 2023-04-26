@@ -1,11 +1,11 @@
 <h1>{{title}}</h1>
 <p>{{body}}</p>
 {{#if (eq itemListOrder "Unordered")}}
-<ul class="card-container-horiz item-list">
+<ul class="card-container rows item-list">
 {{else}}
-<ol class="card-container-horiz item-list">
+<ol class="card-container rows item-list">
 {{/if}}
 	{{#each itemListElement}}
-		<li>{{> includes/card.hbs this}}</li>
+		{{> includes/card.hbs this}}
 	{{/each}}
 </ol>

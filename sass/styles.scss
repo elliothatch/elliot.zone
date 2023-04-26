@@ -1,5 +1,6 @@
 @use 'sanitize.css/sanitize';
 @use 'theme';
+@use 'typography';
 @use 'core';
 @use 'card';
 @use 'store';
@@ -13,79 +14,176 @@
 
 	section.intro {
 		display: grid;
-		height: 70vh;
+		height: 80vh;
+
+		$intro-responsive-viewport-max-width: 720px;
+
+		$intro-responsive-viewport-min-height: 560px;
+		$intro-responsive-viewport-max-height: 960px;
 
 		grid-template-rows:
-		1fr
-		[title-start] auto
-		[title-end subtitle-start] auto
-		[subtitle-end] minmax(2em, 2fr)
-		[logo-start] minmax(150px, 300px)
-		[logo-end] minmax(2em, 2fr)
-		[nav-start] auto
-		[nav-end] 1fr;
+			4fr
+			[title-start] auto
+			[title-end subtitle-start] auto
+			[subtitle-end] 1fr
+			[logo-start] auto
+			[logo-end nav-start] auto
+			[nav-end];
 
 		grid-template-columns:
-			[full-start] 1fr
-			[title-start] 1fr
-			[subtitle-start] 1fr
-			5fr
-			[full-end];
+			[logo-start nav-start] 1fr
+			[title-start] auto
+			1fr
+			[subtitle-start] auto
+			[title-end] max-content
+			[subtitle-end] 5fr
+			[logo-end nav-end];
 
 		justify-items: center;
 
 		background: theme.$secondary-bg;
 
-		padding-top: 2em;
-		padding-bottom: util.responsive(4em);
+		// padding-top: 2em;
+		// padding-bottom: util.responsive(4em);
 
 		h1 {
 			grid-row: title;
-			grid-column: title-start / full-end;
+			grid-column: title;
 			justify-self: start;
 
 			color: theme.$accent-fg;
 			background: none;
-			font-size: util.responsive(10rem);
-			font-weight: 300;
+			// font-size: util.responsive(10rem);
+			// font-size: typography.responsive-linear(
+			// 	typography.type-scale(5.5),
+			// 	typography.type-scale(7),
+			// 	typography.$responsive-viewport-width-min,
+			// 	$intro-responsive-viewport-max-width);
+
+			font-size: Min(
+				typography.responsive-linear(
+					typography.type-scale(5.5),
+					typography.type-scale(7),
+					typography.$responsive-viewport-width-min,
+					$intro-responsive-viewport-max-width),
+				typography.responsive-linear-vh(
+					typography.type-scale(5.5),
+					typography.type-scale(7),
+					$intro-responsive-viewport-min-height,
+					$intro-responsive-viewport-max-height),
+			);
+
 			margin: 0;
 			padding: 0;
 			text-align: left;
-
-			@media(max-width: 799px) {
-				// font-size: 22vw;
-			}
 		}
 
 		p {
 			grid-row: subtitle;
-			grid-column: subtitle-start / full-end;
+			grid-column: subtitle;
 			justify-self: start;
 
-			font-size: util.responsive(3rem);
-			font-weight: 300;
+			font-size: Min(
+				typography.responsive-linear(
+					typography.type-scale(2),
+					typography.type-scale(4),
+					typography.$responsive-viewport-width-min,
+					$intro-responsive-viewport-max-width),
+				typography.responsive-linear-vh(
+					typography.type-scale(2),
+					typography.type-scale(4),
+					$intro-responsive-viewport-min-height,
+					$intro-responsive-viewport-max-height),
+			);
+
+			// font-weight: 100;
+
 			margin: 0;
+			margin-bottom: 1em;
 			padding: 0;
 			text-align: right;
 		}
 
 		.site-logo {
 			grid-row: logo;
-			grid-column: full;
-			max-width: 100%;
-			max-height: none;
-			// width: 100%;
+			grid-column: logo;
+			min-height: 100px;
+			max-height: 200px;
 			height: 100%;
+			width: 100%;
+			img {
+
+				width: 100%;
+				height: 100%;
+			}
 		}
 
 		nav {
 			grid-row: nav;
-			grid-column: full;
-			font-size: 2rem;
-				a {
+			grid-column: nav;
+			font-size: Min(
+				typography.responsive-linear(
+					typography.type-scale(0),
+					typography.type-scale(2),
+					typography.$responsive-viewport-width-min,
+					$intro-responsive-viewport-max-width),
+				typography.responsive-linear-vh(
+					typography.type-scale(0),
+					typography.type-scale(2),
+					$intro-responsive-viewport-min-height,
+					$intro-responsive-viewport-max-height),
+			);
+
+			margin-block: 1em;
+
+			a {
 				padding-inline: 0.5em;
 			}
 		}
+
+		@media (min-aspect-ratio: 4/3) {
+			// collapse the logo and nav rows into columns
+			// grid-template-rows:
+			// 	1fr
+			// 	[title-start] auto
+			// 	[logo-start] auto
+			// 	[title-end subtitle-start] auto
+			// 	[logo-end nav-start] auto
+			// 	[subtitle-end nav-end] 1fr;
+
+			grid-template-rows:
+				1fr
+				[logo-start] auto
+				[title-start] auto
+				[title-end subtitle-start] auto
+				[logo-end nav-start] auto
+				[subtitle-end nav-end] 1fr;
+
+			grid-template-columns:
+				3fr
+				[title-start] auto
+				minmax(4em, 1fr)
+				[subtitle-start] max-content
+				[title-end] auto
+				[subtitle-end] minmax(5em, 1fr)
+				[logo-start nav-start] auto
+				[logo-end nav-end]
+				3fr;
+
+			align-items: center;
+
+			.site-logo {
+				height: typography.responsive-linear-vh(
+					130px,
+					250px,
+					$intro-responsive-viewport-min-height,
+					$intro-responsive-viewport-max-height);
+
+				max-height: none;
+			}
+
+		}
+
 	}
 }
 

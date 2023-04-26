@@ -8,10 +8,9 @@
 
 	"title": "About Me",
 	"_processors": [{
-		"name": "copy",
+		"name": "copyFile",
 		"options": {
 			"uri": "/about/post.md",
-			"from": "contents",
 			"to": "markdown"
 		}
 	}, {

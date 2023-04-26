@@ -14,26 +14,26 @@
 		"url": "https://neurotischism.com",
 		"about": "HTML canvas experiments",
 		"thumbnailUrl": "/projects/neurotischism-thumb.png"
-		}, {
+	}, {
 		"@type": "https://schema.org/WebSite",
 		"name": "Mazenet",
 		"url": "https://mazenet.net",
 		"about": "Social web spelunking",
 		"thumbnailUrl": "/projects/mazenet-thumb.png"
-		}, {
+	}, {
 		"@type": "https://schema.org/CreativeWork",
 		"name": "clock",
 		"url": "/projects/clock",
 		"about": "esp32 powered rgb led clock",
 		"thumbnailUrl": "/projects/clock-thumb.jpg",
 		"hidden": true
-		}, {
+	}, {
 		"@type": "https://schema.org/SoftwareApplication",
 		"name": "sift cli",
 		"url": "https://github.com/elliothatch/sift",
 		"about": "interactive log filtering",
 		"thumbnailUrl": "/projects/sift.gif"
-		}, {
+	}, {
 		"@type": "https://schema.org/CreativeWork",
 		"name": "zine machine",
 		"url": "https://github.com/elliothatch/zine-machine",

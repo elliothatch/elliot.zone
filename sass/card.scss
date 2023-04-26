@@ -1,10 +1,11 @@
 @use 'theme';
+@use 'typography';
 @use 'util';
 
-$card-width-min: 320px;
+$card-width-min: 300px;
 $card-width-max: 560px;
 $card-height: 320px;
-$card-gap: 100px;
+$card-gap: max(20px, min(9vw - 30px, 60px));
 $thumbnail-height: 320px;
 
 
@@ -17,7 +18,8 @@ $thumbnail-height: 320px;
 	justify-items: center;
 	justify-content: center;
 
-	margin: util.responsive(2em) 0;
+	margin: 0;
+	margin-top: 1em;
 	padding: 0;
 }
 
@@ -25,7 +27,10 @@ $thumbnail-height: 320px;
 	display: grid;
 	grid-template-rows: max-content max-content 1fr;
 	grid-template-columns: [full-start]1em [main-start]1fr [main-end]1em [full-end];
+
 	max-width: $card-width-max;
+	// allows us to use justify-items: center with stretch behaivor
+	width: 100%;
 
 	// padding: 1em;
 	border: solid 2px theme.$secondary-fg;
@@ -50,8 +55,72 @@ $thumbnail-height: 320px;
 		}
 	}
 
+	h3 {
+		font-size: typography.type-scale(1);
+		// margin-top: 1em;
+		// margin-bottom: 0.5em;
+		margin-block: 0.8em;
+	}
+
+	p {
+		// margin-block: 1em;
+		margin: 0;
+		margin-bottom: 1em;
+	}
+
 	.name, .about {
 		text-align: center;
+	}
+}
+
+ul.card-container-horiz {
+	padding-left: 0;
+}
+
+.card-container.rows {
+	grid-template-columns: 1fr;
+	// grid-auto-rows: minmax(180px, auto);
+	grid-auto-rows: 180px;
+	grid-gap: 20px;
+
+	justify-items: stretch;
+	justify-content: stretch;
+
+
+	.card {
+		max-width: none;
+		grid-template-columns:
+			[full-start thumbnail-start] 180px
+			[thumbnail-end name-start] 1em
+			[main-start] 1fr
+			[main-end name-end full-end];
+		grid-template-rows: 
+		[full-start] 1fr
+		1fr
+		[full-end];
+		grid-auto-flow: row;
+
+		justify-items: left;
+		align-items: center;
+		column-gap: 2em;
+
+		& > * {
+			grid-column: main;
+		}
+
+		.name {
+			grid-column: name;
+			margin-block: 0;
+			align-self: end;
+		}
+
+		.thumbnail {
+			grid-row: full;
+			grid-column: thumbnail;
+
+			border-bottom: none;
+			border-right: solid 2px theme.$secondary-fg;
+		}
 	}
 }
 

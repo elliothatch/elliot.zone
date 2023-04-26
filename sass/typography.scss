@@ -1,0 +1,128 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'theme';
+@use 'util';
+
+$responsive-viewport-width-max: 960px !default;
+$responsive-viewport-width-min: 320px !default;
+
+body {
+	font-family: theme.$body-font-family;
+	font-weight: theme.$body-font-weight;
+	font-size: theme.$font-base-size;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: theme.$header-font-family;
+	font-weight: theme.$header-font-weight;
+	text-align: center;
+}
+
+$base-font-size: 16px;
+
+/** convert $input to $target unit. units must be px, em, or rem. */
+@function convertUnit($input, $target) {
+	$result: $input;
+
+	@if unit($target) == 'em' and unit($input) == 'px' {
+		$result: $input / $base-font-size + 0em;
+	}
+	@else if unit($target) == 'rem' and unit($input) == 'px' {
+		$result: $input / $base-font-size + 0rem;
+	}
+
+	@return $result;
+}
+
+@function lerp($size-min, $size-max, $container-min, $container-max, $unit-factor) {
+	$scale-rate: ($size-max - $size-min) / ($container-max - $container-min);
+	$scale-offset: -$container-min * $scale-rate + $size-min;
+
+	@return ($scale-offset unquote("+") $scale-rate*$unit-factor);
+}
+
+/** make a value scale responsively between two values for the given viewport widths, using vw linerar interpolation */
+@function responsive-linear($size-min, $size-max, $viewport-width-min: $responsive-viewport-width-min, $viewport-width-max: $responsive-viewport-width-max) {
+	$viewport-min: convertUnit($viewport-width-min, $size-max);
+	$viewport-max: convertUnit($viewport-width-max, $size-min);
+
+	@return clamp($size-min, lerp($size-min, $size-max, $viewport-min, $viewport-max, 100vw), $size-max);
+}
+
+@function responsive-linear-vh($size-min, $size-max, $viewport-height-min, $viewport-height-max) {
+	$viewport-min: convertUnit($viewport-height-min, $size-max);
+	$viewport-max: convertUnit($viewport-height-max, $size-min);
+
+	@return clamp($size-min, lerp($size-min, $size-max, $viewport-min, $viewport-max, 100vh), $size-max);
+}
+
+@function type-scale($level, $base-size: theme.$font-base-size) {
+	@return ($base-size * math.pow(theme.$font-size-ratio, $level));
+}
+
+h1 {
+	font-size: responsive-linear(type-scale(3), type-scale(5));
+	margin-block: type-scale(5, theme.$margin-base-size);
+}
+
+h2 {
+	font-size: responsive-linear(type-scale(2), type-scale(3));
+	margin-block: type-scale(4, theme.$margin-base-size);
+}
+
+h3 {
+	font-size: responsive-linear(type-scale(1), type-scale(2));
+	margin-block: type-scale(3, theme.$margin-base-size);
+}
+
+h4 {
+	font-size: responsive-linear(type-scale(0.75), type-scale(1.75));
+	margin-block: type-scale(2, theme.$margin-base-size);
+}
+
+h5 {
+	font-size: responsive-linear(type-scale(0.5), type-scale(1.5));
+	margin-block: type-scale(2, theme.$margin-base-size);
+}
+
+h6 {
+	font-size: responsive-linear(type-scale(0.25), type-scale(1.25));
+	margin-block: type-scale(2, theme.$margin-base-size);
+}
+
+.https\:\/\/schema\.org\/Test p {
+	margin: 0;
+	border: solid 1px white;
+}
+
+// @each $level, $options in theme.$font-scaling {
+// 	$max-size: theme.$font-base-size * math.pow(theme.$font-size-ratio, map.get($options, max-ratio-level));
+// 	$min-size: theme.$font-base-size * math.pow(theme.$font-size-ratio, map.get($options, min-ratio-level));
+
+// 	$viewport-max-rem: map.get($options, viewport-width-max) / 16px * 1rem;
+// 	$viewport-min-rem: map.get($options, viewport-width-min) / 16px * 1rem;
+
+// 	$scale-rate: ($max-size - $min-size) / ($viewport-max-rem - $viewport-min-rem);
+// 	$scale-offset: -$viewport-min-rem * $scale-rate + $min-size;
+
+// 	#{$level} {
+// 		// linearly scale text between min and max, using vw
+// 		font-size: clamp($min-size, $scale-offset unquote("+") $scale-rate*100vw, $max-size);
+// 	}
+// }
+
+/*
+h1 {
+	font-size: 4rem;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+}
+
+
+h2 {
+	font-size: 2.5rem;
+	margin-top: 0.15em;
+	margin-bottom: 0.15em;
+}
+*/

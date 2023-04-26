@@ -9,7 +9,6 @@ module.exports = {
 		return {
 			files: [
 				'dist',
-				'images',
 				{from: 'scripts', to: '/scripts'},
 				{from: 'fonts', to: '/fonts'}
 			],
@@ -58,6 +57,7 @@ module.exports = {
 					'https://schema.org/Product': 'layouts/product.hbs',
 					'https://schema.org/ProductGroup': 'layouts/product.hbs',
 					'https://schema.org/AboutPage': 'layouts/about.hbs',
+					'https://schema.org/Test': 'layouts/test.hbs',
 				},
 				context: {
 					title: 'elliot.zone',

@@ -9,10 +9,9 @@
 		}
 	},
 	"_processors": [{
-		"name": "copy",
+		"name": "copyFile",
 		"options": {
 			"uri": "/blog/2021-05-23-neovim/post.md",
-			"from": "contents",
 			"to": "markdown"
 		}
 	}, {

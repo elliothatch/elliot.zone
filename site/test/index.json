@@ -1,0 +1,8 @@
+{
+	"title": "test",
+    "_links": {
+        "profile": {
+            "href": "https://schema.org/Test"
+        }
+    }
+}

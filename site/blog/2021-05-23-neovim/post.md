@@ -6,12 +6,12 @@ I'll also showcase some of my favorite plugins, that provide the rich programmin
 
 I should add that [built-in LSP support](https://github.com/neovim/neovim/pull/10222) and [tree-sitter support](https://github.com/tree-sitter/tree-sitter/pull/444) are already implemented in nightly builds and will be included in Neovim's next major release, which may remove the need for some plugins.
 
-# Resources
+## Resources
 Many excellent tutorials for vim already exist, and I encourage you to check them out.
 - [Vim Casts](http://vimcasts.org/)
 - [Learn Vim For the Last Time: A Tutorial and Primer](https://danielmiessler.com/study/vim/)
 
-# Reading this document
+## Reading this document
 Terms styled like <span class="help-keyword">this</span> are keywords that you can search for in Neovim's built-in documentation, using the <span class="ex-command">:help {keyword}</span> command.
 
 Some useful keywords:
@@ -22,7 +22,7 @@ Some useful keywords:
 
 Ex-commands are styled like<span class="ex-command">:this</span> and can be entered into the Neovim command line. You can search any of these commands in Neovim's help for more information.
 
-# init.vim
+## init.vim
 Neovim is configured with vimscript in the config file <span class="help-keyword">init.vim</span>, located at:
 
 > Unix		~/.config/nvim/init.vim
@@ -36,7 +36,7 @@ As you read this guide you can edit your init.vim, then reload it with the comma
 
 You can also run any vimscript command by entering it as a command with the colon `:` key.
 
-# Quick-save
+## Quick-save
 
 ```vimscript
 nnoremap <leader>w :w<cr>
@@ -72,13 +72,13 @@ The help page for <span class="help-keyword">map-modes</span> lists all the vari
 
 > :nunmap can also be used outside of a monastery.
 
-## Why map :w?
+### Why map :w?
 It might seem unnecessary to remap <span class="help-keyword">:w</span>, after all it only saves one keystroke!
 The reasoning goes back to my idea of an "empty slate" for bindings.
 
 Neovim is full of unintuitive commands that can be overwhelming to memorize. It's much easier to remember a small set of bindings that you added yourself. When I find myself repeatedly forgetting how to run a command, I'll make a new binding that's easier to remember.
 
-# Buffers, Windows, and Tabs
+## Buffers, Windows, and Tabs
 When I work I almost always have multiple buffers open at once. I use these keybindings to quickly switch between them:
 
 ```vimscript
@@ -126,10 +126,10 @@ Even with shorthands, this is tedious.
 
 
 
-# Intro to Neovim
+## Intro to Neovim
 Start here if you have never used Neovim or Vim before.
 
-## Launching Neovim
+### Launching Neovim
 Launch neovim by running the `nvim` command. You can open one or more files by passing them as arguments:
 
 ```bash
@@ -140,12 +140,12 @@ If the file exists on your filesystem it will be opened in a buffer, if the file
 
 If you run the above command to open 3 files, you will only see the first file, `a.txt`! While `b.txt` and `c.txt` have been opened in their own buffers, they are hidden from our view.
 
-# Navigation
+## Navigation
 Neovim comes with an interactive tutorial to teach you basic navigation and commands. You can start it by typing <span class="ex-command">:Tutor</span>. I'm not going to cover basic navigation, but later in this article I discuss my most often used commands.
 
 If you're ever lost in neovim, you can always press `Escape` to return to "Normal mode", then type <span class="ex-command">:help</span> to show the built-in help. This page shows you how to close vim and how to move around.
 
-## Buffers, Windows, and Tabs
+### Buffers, Windows, and Tabs
 Neovim's <span class="help-keyword">buffers</span> page explains succinctly:
 
 > A buffer is the in-memory text of a file.
@@ -164,13 +164,13 @@ When selecting by name, Neovim accepts the shortest unique partial name, so only
 Even with shorthands, this is starting to get tedious.
 
 
-# Configuration
+## Configuration
 vim.init
 
-## Plugins
+### Plugins
 vim-plug
 
 
-### fzf.vim
-### coc.vim
+#### fzf.vim
+#### coc.vim
 

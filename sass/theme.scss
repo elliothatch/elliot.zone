@@ -1,13 +1,23 @@
 // layout
-$content-max-width: 60rem;
+$content-max-width: 60rem !default;
 
 // fonts
-$header-font-family: 'Now Alt', sans-serif;
-$header-font-weight: 300;
+$header-font-family: 'Now Alt', sans-serif !default;
+$header-font-weight: 300 !default;
 
-$body-font-family: 'Now Alt', sans-serif;
-$body-font-weight: normal;
+$body-font-family: 'Now Alt', sans-serif !default;
+$body-font-weight: normal !default;
 
+// font sizes
+$font-size-ratio: 1.333 !default;
+$font-base-size: 1.2rem !default;
+$margin-base-size: 0.24em !default;
+
+/**
+	max-ratio-level: number of times the $font-size-ratio is multiplied by the $font-base-size at max size (display width >= $viewport-width)
+	min-ratio-level: same as max-ratio-level but for the minimum allowed size. the font will never shrink below this size.
+	viewport-width: the width of the viewport that achieves maximum font-size.
+*/
 
 // colors
 
@@ -23,18 +33,18 @@ $body-font-weight: normal;
 // $fg-secondary: #fffbcc;
 // $bg-secondary: #444444;
 
-$main-fg: #f2ead7;
-$main-bg: #1a0a16;
+$main-fg: #f2ead7 !default;
+$main-bg: #1a0a16 !default;
 
-$primary-fg: #9e0c46;
-$primary-bg: #f2ead7;
+$primary-fg: #9e0c46 !default;
+$primary-bg: #f2ead7 !default;
 
-$accent-fg: #ff8e2b;
-$accent-bg: #1a0a16;
+$accent-fg: #ff8e2b !default;
+$accent-bg: #1a0a16 !default;
 
-$secondary-fg: #f76c9a;
+$secondary-fg: #f76c9a !default;
 // $bg-secondary: #991667;
-$secondary-bg: #270f21;
+$secondary-bg: #270f21 !default;
 
 // 270f21
 // #210d21
