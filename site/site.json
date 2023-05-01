@@ -1,33 +1,33 @@
 {
-	"title": "elliot.zone",
+	"name": "elliot.zone",
 	"navLinks": {
 		"about": {
-			"href": "/about",
-			"title": "About"
+			"@id": "/about",
+			"name": "About"
 		},
 		"store": {
-			"href": "/store/chess-etc",
-			"title": "Store"
+			"@id": "/store/chess-etc",
+			"name": "Store"
 		},
 		"projects": {
-			"href": "/projects",
-			"title": "Projects"
+			"@id": "/projects",
+			"name": "Projects"
 		}
 	},
 	"footerLinks": [{
-		"title": "github",
-		"href": "https://github.com/elliothatch/"
+		"name": "github",
+		"@id": "https://github.com/elliothatch/"
 	}, {
-		"title": "npm",
-		"href": "https://www.npmjs.com/~elliothatch"
+		"name": "npm",
+		"@id": "https://www.npmjs.com/~elliothatch"
 	}, {
-		"title": "twitter",
-		"href": "https://twitter.com/neurotischism"
+		"name": "twitter",
+		"@id": "https://twitter.com/neurotischism"
 	}, {
-		"title": "fedi",
-		"href": "https://weirder.earth/@neurotischism"
+		"name": "fedi",
+		"@id": "https://weirder.earth/@neurotischism"
 	}, {
-		"title": "patreon",
-		"href": "https://www.patreon.com/neurotischism"
+		"name": "patreon",
+		"@id": "https://www.patreon.com/neurotischism"
 	}]
 }

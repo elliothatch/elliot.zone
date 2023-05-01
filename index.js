@@ -16,7 +16,7 @@ module.exports = {
 				sitePaths: ['site'],
 				processors: {
 					pre: [{
-						name: 'ld:self'
+						name: 'self'
 					}],
 				},
 				dynamicResources: [{

@@ -1,134 +1,82 @@
 {
-
-	"title": "hello!",
+	"@type": "/schema/homepage",
+	"name": "hello!",
 	"subtitle": "welcome to",
 	"store": [{
 		"@type": "https://schema.org/Product",
 		"name": "chess etc.",
 		"url": "/store/chess-etc",
-		"about": "portable magnetic classic games set",
+		"description": "portable magnetic classic games set",
 		"thumbnailUrl": "/store/chess-etc/set-clean.jpg"
 	}],
 	"projects": [{
 		"@type": "https://schema.org/WebSite",
 		"name": "neurotischism.com",
 		"url": "https://neurotischism.com",
-		"about": "HTML canvas experiments",
+		"description": "HTML canvas experiments",
 		"thumbnailUrl": "/projects/neurotischism-thumb.png"
 	}, {
 		"@type": "https://schema.org/WebSite",
 		"name": "Mazenet",
 		"url": "https://mazenet.net",
-		"about": "Social web spelunking",
+		"description": "Social web spelunking",
 		"thumbnailUrl": "/projects/mazenet-thumb.png"
 	}, {
 		"@type": "https://schema.org/CreativeWork",
 		"name": "clock",
 		"url": "/projects/clock",
-		"about": "esp32 powered rgb led clock",
+		"description": "esp32 powered rgb led clock",
 		"thumbnailUrl": "/projects/clock-thumb.jpg",
 		"hidden": true
 	}, {
 		"@type": "https://schema.org/SoftwareApplication",
 		"name": "sift cli",
 		"url": "https://github.com/elliothatch/sift",
-		"about": "interactive log filtering",
+		"description": "interactive log filtering",
 		"thumbnailUrl": "/projects/sift.gif"
 	}, {
 		"@type": "https://schema.org/CreativeWork",
 		"name": "zine machine",
 		"url": "https://github.com/elliothatch/zine-machine",
-		"about": "a little box that spits text out of a receipt printer",
+		"description": "a little box that spits text out of a receipt printer",
 		"thumbnailUrl": "/projects/zine-machine.jpg"
 	}, {
 		"@type": "https://schema.org/CreativeWork",
 		"name": "burgundy",
 		"url": "/projects/burgundy",
-		"about": "color schemes",
+		"description": "color schemes",
 		"thumbnailUrl": "https://raw.githubusercontent.com/elliothatch/burgundy.vim/master/screenshots/burgundy.png"
 	}, {
 		"@type": "https://schema.org/SoftwareApplication",
 		"name": "esp32-leds",
 		"url": "https://github.com/elliothatch/esp32-leds",
-		"about": "driving WS2812 RBG leds with an ESP32 (WIP)",
+		"description": "driving WS2812 RBG leds with an ESP32 (WIP)",
 		"thumbnailUrl": "/projects/clock-thumb.jpg"
 	}],
 	"code": [{
 		"@type": "https://schema.org/SoftwareApplication",
 		"name": "hypermedium",
 		"url": "https://github.com/elliothatch/hypermedium",
-		"about": "tool for creating websites (including this one!)"
+		"description": "tool for creating websites (including this one!)"
 		}, {
 		"@type": "https://schema.org/SoftwareApplication",
 		"name": "freshlog",
 		"url": "https://github.com/elliothatch/freshlog",
-		"about": "simple nodejs logger"
+		"description": "simple nodejs logger"
 		}, {
 		"@type": "https://schema.org/SoftwareApplication",
 		"name": "fresh-validation",
 		"url": "https://github.com/elliothatch/fresh-validation",
-		"about": "runtime schema validation for typescript classes"
+		"description": "runtime schema validation for typescript classes"
 		}, {
 		"@type": "https://schema.org/SoftwareSourceCode",
 		"name": "sample code",
 		"url": "https://github.com/elliothatch/sample-code",
-		"about": "sample code snippets in various programming languages (for testing color schemes)"
+		"description": "sample code snippets in various programming languages (for testing color schemes)"
 		}, {
 		"@type": "https://schema.org/SoftwareSourceCode",
 		"name": "fresh-socketio-router",
 		"url": "https://github.com/elliothatch/fresh-socketio-router",
-		"about": "middleware router for socketio transactions"
-	}],
-	"_links": {
-        "profile": {
-            "href": "/schema/homepage"
-        },
-		"store": {
-			"title": "store",
-			"href": "/store"
-		},
-		"projects": {
-			"title": "projects",
-			"href": "/projects"
-		},
-		"blog": {
-			"title": "blog",
-			"href": "/blog"
-		},
-		"socialMedia": [{
-			"title": "github",
-			"href": "https://github.com/elliothatch/"
-		}, {
-			"title": "npm",
-			"href": "https://www.npmjs.com/~elliothatch"
-		}, {
-			"title": "twitter",
-			"href": "https://twitter.com/neurotischism"
-		}, {
-			"title": "fedi",
-			"href": "https://weirder.earth/@neurotischism"
-		}]
-	},
-	"_processors": [{
-		"name": "getIndex",
-		"options": {
-			"property": "_links.profile.href",
-			"filter": "https://schema.org/BlogPosting",
-			"to": "blog"
-		}
-	}, {
-		"name": "sort",
-		"options": {
-			"property": "blog",
-			"key": "date-created",
-			"compare": "date",
-			"descending": true
-		}
-	}, {
-		"name": "embed",
-		"options": {
-			"property": "blog",
-			"pick": ["date-created", "description"]
-		}
+		"description": "middleware router for socketio transactions"
 	}]
 }

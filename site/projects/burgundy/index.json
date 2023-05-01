@@ -1,9 +1,4 @@
 {
-	"_links": {
-		"profile": {
-			"href": "https://schema.org/ItemList"
-		}
-	},
 	"@type": [
 		"/schema/project",
 		"https://schema.org/ItemList"
@@ -16,24 +11,24 @@
 		"@type": "https://schema.org/CreativeWork",
 		"name": "burgundy.vim",
 		"url": "https://github.com/elliothatch/burgundy.vim",
-		"about": "neovim colorscheme",
+		"description": "neovim colorscheme",
 		"thumbnailUrl": "/projects/burgundy/burgundy-vim.png"
 	}, {
 		"@type": "https://schema.org/CreativeWork",
 		"name": "burgundywine",
 		"url": "https://addons.mozilla.org/en-US/firefox/addon/burgundywine/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search",
-		"about": "firefox theme",
+		"description": "firefox theme",
 		"thumbnailUrl": "/projects/burgundy/burgundy-firefox.svg"
 	}, {
 		"@type": "https://schema.org/CreativeWork",
 		"name": "burgundy terminal",
 		"url": "https://github.com/elliothatch/dotfiles/blob/master/core/.config/alacritty/alacritty.yml",
-		"about": "alacritty theme",
+		"description": "alacritty theme",
 		"thumbnailUrl": "/projects/burgundy/burgundy-terminal.png"
 	}],
 
 	"name": "burgundy",
 	"url": "/projects/burgundy",
-	"about": "color schemes",
+	"description": "color schemes",
 	"thumbnailUrl": "/projects/burgundy/burgundy-vim.png"
 }

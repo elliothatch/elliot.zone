@@ -1,17 +1,10 @@
 {
-	"_links": {
-		"profile": [{
-			"href": "/schema/project"
-		}, {
-			"href": "https://schema.org/WebSite"
-		}]
-	},
 	"@type": [
 		"/schema/project",
 		"https://schema.org/WebSite"
 	],
 	"name": "Mazenet",
 	"url": "https://mazenet.net",
-	"about": "Social web spelunking",
+	"description": "Social web spelunking",
 	"thumbnailUrl": "/projects/mazenet-thumb.png"
 }

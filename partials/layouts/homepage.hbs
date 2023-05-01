@@ -1,11 +1,11 @@
 <section class="intro">
-	<h1>{{title}}</h1>
+	<h1>{{name}}</h1>
 	<p>{{subtitle}}</p>
 
 	<picture class="site-logo"><img src="/elliot-zone-logo.svg" alt="{{_site.title}}"></picture>
 	<nav>
 		{{#each _site.navLinks}}
-			{{hal-link @key this}}
+			{{link this @key}}
 		{{/each}}
 	</nav>
 	</div>
@@ -33,7 +33,7 @@
 	<h2>code</h2>
 	<ul class="items">
 	{{#each code}}
-		<li><a href="{{url}}">{{name}}</a> - {{about}}</li>
+		<li><a href="{{url}}">{{name}}</a> - {{description}}</li>
 	{{/each}}
 	</ul>
 </section>
