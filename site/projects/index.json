@@ -1,13 +1,45 @@
 {
-	"title": "welcome to elliot.zone",
-	"body": "enter the elliot zone now",
 	"_links": {
-		"sites": [{
-			"title": "neurotischism",
-			"href": "https://neurotischism.com"
-		}, {
-			"title": "mazenet.net",
-			"href": "https://mazenet.net"
-		}]
-	}
+		"profile": {
+			"href": "https://schema.org/ItemList"
+		}
+	},
+	"@type": "https://schema.org/ItemList",
+	"title": "projects",
+	"itemListOrder": "Unordered",
+	"_processors": [{
+		"name": "copy",
+		"options": {
+			"uri": "/~hypermedium/dynamic/index/@type",
+			"from": "index./schema/project",
+			"to": "itemListElement"
+		}
+	}, {
+			"name": "map",
+			"options": {
+				"processor": {
+					"name": "ld:embed",
+					"properties": [
+						"name",
+						"about",
+						"thumbnailUrl"
+					]
+				},
+				"property": "itemListElement"
+			}
+	}, {
+		"name": "order",
+		"options": {
+			"property": "itemListElement",
+			"key": "@id",
+			"values": [
+				"/projects/neurotischism",
+				"/projects/mazenet",
+				"/projects/sift",
+				"/projects/zine-machine",
+				"/projects/burgundy",
+				"/projects/esp32-leds"
+			]
+		}
+	}]
 }

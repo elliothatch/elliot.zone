@@ -1,0 +1,17 @@
+{
+	"_links": {
+		"profile": [{
+			"href": "/schema/project"
+		}, {
+			"href": "https://schema.org/WebSite"
+		}]
+	},
+	"@type": [
+		"/schema/project",
+		"https://schema.org/SoftwareApplication"
+	],
+	"name": "esp32-leds",
+	"url": "https://github.com/elliothatch/esp32-leds",
+	"about": "driving WS2812 RBG leds with an ESP32 (WIP)",
+	"thumbnailUrl": "/projects/clock-thumb.jpg"
+}

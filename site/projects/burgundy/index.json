@@ -4,7 +4,10 @@
 			"href": "https://schema.org/ItemList"
 		}
 	},
-	"@type": "https://schema.org/ItemList",
+	"@type": [
+		"/schema/project",
+		"https://schema.org/ItemList"
+	],
 
 	"title": "burgundy color scheme",
 	"body": "burgundy is a dark color scheme",
@@ -27,5 +30,10 @@
 		"url": "https://github.com/elliothatch/dotfiles/blob/master/core/.config/alacritty/alacritty.yml",
 		"about": "alacritty theme",
 		"thumbnailUrl": "/projects/burgundy/burgundy-terminal.png"
-	}]
+	}],
+
+	"name": "burgundy",
+	"url": "/projects/burgundy",
+	"about": "color schemes",
+	"thumbnailUrl": "/projects/burgundy/burgundy-vim.png"
 }

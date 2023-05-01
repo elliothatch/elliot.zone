@@ -1,0 +1,17 @@
+{
+	"_links": {
+		"profile": [{
+			"href": "/schema/project"
+		}, {
+			"href": "https://schema.org/WebSite"
+		}]
+	},
+	"@type": [
+		"/schema/project",
+		"https://schema.org/WebSite"
+	],
+	"name": "neurotischism.com",
+	"url": "https://neurotischism.com",
+	"about": "HTML canvas experiments",
+	"thumbnailUrl": "/projects/neurotischism-thumb.png"
+}

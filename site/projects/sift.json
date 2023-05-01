@@ -1,0 +1,17 @@
+{
+	"_links": {
+		"profile": [{
+			"href": "/schema/project"
+		}, {
+			"href": "https://schema.org/WebSite"
+		}]
+	},
+	"@type": [
+		"/schema/project",
+		"https://schema.org/SoftwareApplication"
+	],
+	"name": "sift cli",
+	"url": "https://github.com/elliothatch/sift",
+	"about": "interactive log filtering",
+	"thumbnailUrl": "/projects/sift.gif"
+}
