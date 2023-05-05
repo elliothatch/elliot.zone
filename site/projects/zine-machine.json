@@ -6,5 +6,5 @@
 	"name": "zine machine",
 	"url": "https://github.com/elliothatch/zine-machine",
 	"description": "a little box that spits text out of a receipt printer",
-	"thumbnailUrl": "/projects/zine-machine.jpg"
+	"image": "/projects/zine-machine.jpg"
 }

@@ -1,328 +1,383 @@
 @use 'theme';
+@use 'util';
+@use 'typography';
 
-// .store.featured .card {
-// 	.thumbnail {
-// 		max-width: 500px;
-// 		max-height: 500px;
-// 		img {
-// 			aspect-ratio: unset;
-// 		}
-// 	}
-// }
+.product-group {
+	padding-top: typography.responsive-linear(1em, 3em);
+	// .body {
+		// margin: 2em;
+	// }
+	grid-template-rows:
+		[gallery-start body-start] auto
+		[gallery-end body-end];
 
-// .image-gallery {
-// 	display: flex;
-// 	flex-wrap: wrap;
-// 	justify-content: center;
-// 	align-items: center;
-// 	// border-bottom: solid 1px theme.$primary-fg;
-// 	padding-bottom: 1em;
-// 	.thumbnail {
-// 		flex-grow: 1;
-// 		flex-shrink: 1;
-// 		max-width: 320px;
-// 		max-height: 320px;
+	grid-template-columns:
+	[full-start] minmax(0, 1fr)
+	[main-start body-start] minmax(320px, theme.$content-max-width*0.45)
+	[body-end gallery-start]minmax(320px, theme.$content-max-width*0.55)
+	[gallery-end main-end] minmax(0, 1fr)
+	[full-end];
 
-// 		img {
-// 			height: 100%;
-// 			width: 100%;
-// 			aspect-ratio: 1/1;
-// 			object-fit: cover;
-// 			vertical-align: middle;
-// 		}
+	@media (max-width: theme.$content-max-width) {
+		grid-template-rows:
+		[gallery-start] auto
+		[gallery-end body-start] auto
+		[body-end];
 
-// 		&:first-child {
-// 			// TODO: give this responsive height without causing overflow
-// 			height: 460px;
-// 			max-height: 460px;
-// 			max-width: none;
-// 			img {
-// 				aspect-ratio: unset;
-// 				object-fit: contain;
-// 			}
-// 		}
-// 	}
-// }
+		grid-template-columns:
+		[full-start] minmax(0, 1fr)
+		[main-start gallery-start body-start] minmax(0, theme.$content-max-width)
+		[main-end gallery-end body-end] minmax(0, 1fr)
+		[full-end];
+	}
 
-// .circle {
-// 	display: inline-block;
-// 	background: white;
-// 	width: 24px;
-// 	height: 24px;
-// 	border-radius: 50%;
-// 	border: solid 1px theme.$main-fg;
-// }
+	grid-gap: typography.responsive-linear(0em, 2em);
+;
 
-// .multi-circle {
-// 	display: inline-block;
-// 	.semi-circle-top {
-// 		display: block;
-// 		background: white;
-// 		width: 24px;
-// 		height: 12px;
-// 		border-radius: 13px 13px 0 0;
-// 		border: solid 1px theme.$main-fg;
-// 	}
+	.image-gallery {
+		grid-column: gallery;
+		// grid-column: 3/4;
+		grid-row: gallery;
+	}
+	.body {
+		grid-column: body;
+		// grid-column: 2/3;
+		grid-row: body;
+	}
+}
 
-// 	.semi-circle-bottom {
-// 		display: block;
-// 		background: white;
-// 		width: 24px;
-// 		height: 12px;
-// 		border-radius: 0 0 13px 13px;
-// 		border: solid 1px theme.$main-fg;
-// 	}
-// }
+.image-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
 
 
-// .offers {
-// 	display: flex;
-// 	flex-wrap: wrap;
-// 	justify-content: center;
-// 	align-items: center;
+	height: 100%;
 
-// 	.itemOffered {
-// 		display: flex;
-// 		justify-content: center;
-// 		align-items: center;
+	// border-bottom: solid 1px theme.$primary-fg;
+	padding-bottom: 1em;
+	.image {
+		flex: 1 1 50px;
+		min-width: 100px;
+		min-height: 100px;
+		// max-width: 50%;
+		// max-height: 320px;
 
-// 		border: solid 1px theme.$primary-fg;
-// 		flex-shrink: 1;
-// 		padding: 5px;
+		img {
+			height: 100%;
+			width: 100%;
+			aspect-ratio: 1/1;
+			object-fit: cover;
+			vertical-align: middle;
+		}
 
-// 	}
+		&:first-child {
+			flex: auto;
+			// max-width: 100%;
+			// TODO: give this responsive height without causing overflow
+			// height: 460px;
+			// max-height: 460px;
+			// max-width: none;
+			img {
+				aspect-ratio: unset;
+				object-fit: contain;
+			}
+		}
+	}
+}
 
-// 	.offer.selected .itemOffered {
-// 		border: solid 3px theme.$main-fg;
-// 		padding: 2px;
-// 	}
-// }
+.circle {
+	display: inline-block;
+	background: white;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	border: solid 1px theme.$main-fg;
+	margin-right: 0.5em;
+}
 
-// .product-group {
-// 	.body {
-// 		margin: 2em;
-// 	}
-// }
+.multi-circle {
+	display: inline-block;
+	margin-right: 0.5em;
+	.semi-circle-top {
+		display: block;
+		background: white;
+		width: 24px;
+		height: 12px;
+		border-radius: 13px 13px 0 0;
+		border: solid 1px theme.$main-fg;
+	}
 
-// .store-section {
-// 	dl {
-// 		dt {
-// 			display: inline-block;
-// 			min-width: 8em;
-// 			&::after {
-// 				content: ':';
-// 			}
-// 		}
+	.semi-circle-bottom {
+		display: block;
+		background: white;
+		width: 24px;
+		height: 12px;
+		border-radius: 0 0 13px 13px;
+		border: solid 1px theme.$main-fg;
+	}
+}
 
-// 		dd {
-// 			display: inline;
-// 			margin: 0;
-// 			&::after {
-// 				display: block;
-// 				content: '';
-// 			}
-// 		}
-// 	}
-// }
 
-// .chess-etc-set-colors {
-// 	display: flex;
+.offers {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 
-// 	--boxColor: #ffffff;
-// 	--lidColor: #ffffff;
-// 	--chessLightColor: #ffffff;
-// 	--chessDarkColor: #000000;
-// 	--checkersLightColor: #ffffff;
-// 	--checkersDarkColor: #000000;
-// 	--tangramsColor: #000000;
-// 	--diceColor: #000000;
+	.itemOffered {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-// 	--checkerboardLightColor: #ffffff;
-// 	--checkerboardDarkColor: #000000;
+		border: solid 1px theme.$primary-fg;
+		flex-shrink: 1;
+		padding-inline: 10px;
+		padding-block: 20px;
 
-// 	background: #777777;
+		p {
+			margin: 0;
+		}
 
-// 	& > div {
-// 		margin: 0.5em 0;
-// 	}
+	}
 
-// 	.lid {
-// 		display: flex;
-// 		width: 320px;
-// 		height: 300px;
-// 		margin: 10px;
-// 		padding: 30px;
-// 		background: var(--lidColor);
+	.offer.selected .itemOffered {
+		border: solid 3px theme.$main-fg;
+		padding-inline: 10px - 2px;
+		padding-block: 20px - 2px;
+	}
+}
 
-// 		&::before, &::after {
-// 			width: 10px;
-// 			height: 300px;
-// 			margin-top: -30px;
-// 			content: "";
-// 			background: var(--boxColor);
-// 			filter: invert(15%);
-// 		}
+.store-section {
+	dl {
+		dt {
+			display: inline-block;
+			min-width: 8em;
+			&::after {
+				content: ':';
+			}
+		}
 
-// 		&::before {
-// 			margin-left: -30px;
-// 			margin-right: 30px;
-// 		}
+		dd {
+			display: inline;
+			margin: 0;
+			&::after {
+				display: block;
+				content: '';
+			}
+		}
+	}
+}
 
-// 		&::after {
-// 			margin-left: 30px;
-// 			margin-right: -30px;
-// 		}
+.chess-etc-set-colors {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 
-// 		.checkerboard {
-// 			width: 100%;
-// 			height: 100%;
-// 			display: grid;
-// 			grid-template-columns: repeat(8, 1fr);
-// 			grid-template-rows: repeat(8, 1fr);
+	--boxColor: #ffffff;
+	--lidColor: #ffffff;
+	--chessLightColor: #ffffff;
+	--chessDarkColor: #000000;
+	--checkersLightColor: #ffffff;
+	--checkersDarkColor: #000000;
+	--tangramsColor: #000000;
+	--diceColor: #000000;
 
-// 			.square {
-// 				padding: 0;
-// 			}
+	--checkerboardLightColor: #ffffff;
+	--checkerboardDarkColor: #000000;
 
-// 			div:nth-child(16n+1),
-// 				div:nth-child(16n+3),
-// 				div:nth-child(16n+5),
-// 				div:nth-child(16n+7),
-// 				div:nth-child(16n+10),
-// 				div:nth-child(16n+12),
-// 				div:nth-child(16n+14),
-// 				div:nth-child(16n+16) {
-// 				background: var(--checkerboardLightColor);
-// 			}
+	// background: #777777;
 
-// 			div:nth-child(16n+2),
-// 				div:nth-child(16n+4),
-// 				div:nth-child(16n+6),
-// 				div:nth-child(16n+8),
-// 				div:nth-child(16n+9),
-// 				div:nth-child(16n+11),
-// 				div:nth-child(16n+13),
-// 				div:nth-child(16n+15) {
-// 				background: var(--checkerboardDarkColor);
-// 			}
+	& > div {
+		margin: 0.5em 0;
+	}
 
-// 			// this overrides the nth-child rules.
-// 			// @for $i from 0 to 64 {
-// 			// 	div.sq-#{$i} {
-// 			// 		background: var(--sq-#{$i}-color);
-// 			// 	}
-// 			// }
-// 		}
-// 	}
+	.lid {
+		display: flex;
+		max-width: 320px;
+		max-height: 300px;
+		width: 100%;
+		min-width: 0;
+		min-height: 0;
+		aspect-ratio: 320/300;
+		margin: 10px;
+		padding: 30px;
+		background: var(--lidColor);
 
-// 	.box {
-// 		width: 300px;
-// 		height: 300px;
-// 		position: relative;
+		&::before, &::after {
+			width: 10px;
+			// height: 300px;
+			height: calc(60px + 100%);
+			margin-top: -30px;
+			content: "";
+			background: var(--boxColor);
+			filter: invert(15%);
+		}
 
-// 		position: relative;
+		&::before {
+			margin-left: -30px;
+			margin-right: 30px;
+		}
 
-// 		& > div {
-// 			position: absolute;
-// 		}
+		&::after {
+			margin-left: 30px;
+			margin-right: -30px;
+		}
 
-// 		.box-bg {
-// 			width: 100%;
-// 			height: 100%;
-// 			margin: 0;
-// 			padding: 0;
+		.checkerboard {
+			width: 100%;
+			height: 100%;
+			display: grid;
+			grid-template-columns: repeat(8, 1fr);
+			grid-template-rows: repeat(8, 1fr);
 
-// 			background: var(--boxColor) !important;
-// 			filter: invert(15%);
-// 		}
+			.square {
+				padding: 0;
+			}
 
-// 		.chess-light svg path {
-// 			fill: var(--chessLightColor) !important;
-// 		}
+			div:nth-child(16n+1),
+				div:nth-child(16n+3),
+				div:nth-child(16n+5),
+				div:nth-child(16n+7),
+				div:nth-child(16n+10),
+				div:nth-child(16n+12),
+				div:nth-child(16n+14),
+				div:nth-child(16n+16) {
+				background: var(--checkerboardLightColor);
+			}
 
-// 		.chess-dark svg path {
-// 			fill: var(--chessDarkColor) !important;
-// 		}
+			div:nth-child(16n+2),
+				div:nth-child(16n+4),
+				div:nth-child(16n+6),
+				div:nth-child(16n+8),
+				div:nth-child(16n+9),
+				div:nth-child(16n+11),
+				div:nth-child(16n+13),
+				div:nth-child(16n+15) {
+				background: var(--checkerboardDarkColor);
+			}
 
-// 		.checkers-light svg path {
-// 			fill: var(--checkersLightColor) !important;
-// 		}
-// 		.checkers-dark svg path {
-// 			fill: var(--checkersDarkColor) !important;
-// 		}
-// 		.tangrams svg path {
-// 			fill: var(--tangramsColor) !important;
-// 		}
-// 		.dice svg {
-// 			rect {
-// 				fill: var(--diceColor) !important;
-// 			}
-// 			path {
-// 				fill: var(--diceColor) !important;
-// 				filter: invert(100%);
-// 			}
-// 		}
-// 	}
+			// this overrides the nth-child rules.
+			// @for $i from 0 to 64 {
+			// 	div.sq-#{$i} {
+			// 		background: var(--sq-#{$i}-color);
+			// 	}
+			// }
+		}
+	}
 
-// 	/*
-// .box {
-// width: 300px;
-// height: 300px;
-// position: relative;
+	.box {
+		max-width: 300px;
+		max-height: 300px;
+		width: 100%;
+		min-width: 0;
+		min-height: 0;
+		aspect-ratio: 1;
+		position: relative;
 
-// background: var(--boxColor);
-// .chess-pieces {
-// position: absolute;
-// & > div {
-// margin: 0.5em 0;
-// }
-// .pawns, .pieces {
-// display: flex;
-// justify-content: center;
+		& > div {
+			position: absolute;
+		}
 
-// height: calc(300px / 8);
-// width: 300px;
+		.box-bg {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
 
-// & > div {
-// flex-grow: 1;
-// }
-// img, svg {
-// width: 100%;
-// height: auto;
-// max-height: 30px;
-// }
+			background: var(--boxColor) !important;
+			filter: invert(15%);
+		}
 
-// .pawn {
-// img, svg {
-// max-height: 25px;
-// }
-// }
-// }
+		.chess-light svg path {
+			fill: var(--chessLightColor) !important;
+		}
 
-// .chess-pieces-light > div {
-// img {
-// filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0) brightness(100%) contrast(100%);
-// }
+		.chess-dark svg path {
+			fill: var(--chessDarkColor) !important;
+		}
 
-// svg {
-// path {
-// fill: var(--chessLightColor) !important;
-// }
-// }
-// }
+		.checkers-light svg path {
+			fill: var(--checkersLightColor) !important;
+		}
+		.checkers-dark svg path {
+			fill: var(--checkersDarkColor) !important;
+		}
+		.tangrams svg path {
+			fill: var(--tangramsColor) !important;
+		}
+		.dice svg {
+			rect {
+				fill: var(--diceColor) !important;
+			}
+			path {
+				fill: var(--diceColor) !important;
+				filter: invert(100%);
+			}
+		}
+	}
 
-// .chess-pieces-dark > div {
-// img {
-// filter: brightness(0) saturate(100%);
-// }
+	/*
+.box {
+width: 300px;
+height: 300px;
+position: relative;
 
-// svg {
-// path {
-// fill: var(--chessDarkColor) !important;
-// }
-// }
-// }
-// }
-// }
-// 	*/
-// }
+background: var(--boxColor);
+.chess-pieces {
+position: absolute;
+& > div {
+margin: 0.5em 0;
+}
+.pawns, .pieces {
+display: flex;
+justify-content: center;
+
+height: calc(300px / 8);
+width: 300px;
+
+& > div {
+flex-grow: 1;
+}
+img, svg {
+width: 100%;
+height: auto;
+max-height: 30px;
+}
+
+.pawn {
+img, svg {
+max-height: 25px;
+}
+}
+}
+
+.chess-pieces-light > div {
+img {
+filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0) brightness(100%) contrast(100%);
+}
+
+svg {
+path {
+fill: var(--chessLightColor) !important;
+}
+}
+}
+
+.chess-pieces-dark > div {
+img {
+filter: brightness(0) saturate(100%);
+}
+
+svg {
+path {
+fill: var(--chessDarkColor) !important;
+}
+}
+}
+}
+}
+	*/
+}

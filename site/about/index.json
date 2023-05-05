@@ -1,12 +1,7 @@
 {
-	"_links": {
-		"profile": {
-			"href": "https://schema.org/AboutPage"
-		}
-	},
 	"@type": "https://schema.org/AboutPage",
 
-	"title": "About Me",
+	"name": "About Me",
 	"_processors": [{
 		"name": "copyFile",
 		"options": {

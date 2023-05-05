@@ -49,10 +49,14 @@ body {
 body > header {
 	grid-row: header;
 	grid-column: full;
-	// display: grid;
-	// grid-template-columns: minmax(100px, 1fr) 1fr;
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: 
+	[title-start] max-content
+	[title-end] 1fr
+	[nav-start] auto
+	[nav-end];
+	// display: flex;
+	// justify-content: space-between;
 
 	// display: grid;
 	// grid-template-columns: minmax(100px, 1fr) 1fr;
@@ -63,6 +67,11 @@ body > header {
 
 	padding: 0.1em 0.3em;
 
+	.site-title {
+		grid-column: title;
+		// flex-shrink: 0;
+	}
+
 	h1 {
 		// margin: 1em;
 		margin-left: 0.5em;
@@ -72,12 +81,10 @@ body > header {
 	}
 
 	a {
-		background: theme.$primary-fg;
-		color: theme.$primary-bg;
+		color: theme.$main-fg;
 
 		&:visited {
-			// background: theme.$primary-fg;
-			color: theme.$secondary-fg;
+			color: theme.$main-fg;
 		}
 
 		& > picture img {
@@ -87,13 +94,16 @@ body > header {
 		}
 
 		&:hover, &:focus {
-			background: theme.$primary-fg;
 			color: theme.$accent-fg;
 		}
 	}
 
 	nav {
-		flex-shrink: 2;
+		// flex-shrink: 2;
+		justify-content: end;
+
+		grid-column: nav;
+
 		margin-left: 0.5em;
 		margin-right: 0.5em;
 
@@ -106,6 +116,12 @@ body > header {
 		a {
 			margin-left: 0.4em;
 			margin-right: 0.4em;
+
+			@media (max-width: 480px) {
+				// hack to make all nav elements wrap at the same time
+				width: 100%;
+				text-align: end;
+			}
 		}
 	}
 }
@@ -117,6 +133,9 @@ body > main {
 
 	// margin-top: 2em;
 	// margin-bottom: 2em;
+	
+	
+	/* grid elements don't have margin collapsing, so we have to simulate it ourselves */
 }
 
 body > main > * {
@@ -129,6 +148,11 @@ body > main > * {
 	// &:last-child {
 		// margin-bottom: 0;
 	// }
+	
+	/* remove top margins since grid items don't have margin collapse */
+	&:not(:first-child) {
+		margin-top: 0;
+	}
 }
 
 body > footer {
@@ -144,21 +168,18 @@ body > footer {
 	padding-bottom: 1em;
 
 	background: theme.$primary-fg;
-	color: theme.$primary-bg;
+	color: theme.$main-fg;
 
 	a {
-		background: theme.$primary-fg;
-		color: theme.$primary-bg;
+		color: theme.$main-fg;
 		margin-left: .5em;
 		margin-right: .5em;
 
 		&:visited {
-			background: theme.$primary-fg;
-			color: theme.$primary-bg;
+			color: theme.$main-fg;
 		}
 
 		&:hover, &:focus {
-			background: theme.$primary-fg;
 			color: theme.$accent-fg;
 		}
 	}
@@ -166,7 +187,6 @@ body > footer {
 
 /* colors */
 a {
-	// background: theme.$primary-bg;
 	color: theme.$secondary-fg;
 
 	text-decoration: underline;
@@ -175,7 +195,7 @@ a {
 		color: theme.$primary-fg;
 	}
 	&:hover, &:focus {
-		color: theme.$main-fg;
+		color: theme.$accent-fg;
 	}
 }
 
@@ -316,7 +336,7 @@ ol.items {
 
 button {
 	background: theme.$primary-fg;
-	color: theme.$primary-bg;
+	color: theme.$main-fg;
 }
 
 .full-width {

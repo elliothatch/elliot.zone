@@ -1,10 +1,4 @@
 {
 	"title": "store",
-	"body": "you might be able to buy these things",
-	"_links": {
-		"products": [{
-			"title": "chess etc.",
-			"href": "/store/chess-etc"
-		}]
-	}
+	"body": "you might be able to buy these things"
 }

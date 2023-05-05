@@ -7,51 +7,7 @@
 		"name": "chess etc.",
 		"url": "/store/chess-etc",
 		"description": "portable magnetic classic games set",
-		"thumbnailUrl": "/store/chess-etc/set-clean.jpg"
-	}],
-	"projects": [{
-		"@type": "https://schema.org/WebSite",
-		"name": "neurotischism.com",
-		"url": "https://neurotischism.com",
-		"description": "HTML canvas experiments",
-		"thumbnailUrl": "/projects/neurotischism-thumb.png"
-	}, {
-		"@type": "https://schema.org/WebSite",
-		"name": "Mazenet",
-		"url": "https://mazenet.net",
-		"description": "Social web spelunking",
-		"thumbnailUrl": "/projects/mazenet-thumb.png"
-	}, {
-		"@type": "https://schema.org/CreativeWork",
-		"name": "clock",
-		"url": "/projects/clock",
-		"description": "esp32 powered rgb led clock",
-		"thumbnailUrl": "/projects/clock-thumb.jpg",
-		"hidden": true
-	}, {
-		"@type": "https://schema.org/SoftwareApplication",
-		"name": "sift cli",
-		"url": "https://github.com/elliothatch/sift",
-		"description": "interactive log filtering",
-		"thumbnailUrl": "/projects/sift.gif"
-	}, {
-		"@type": "https://schema.org/CreativeWork",
-		"name": "zine machine",
-		"url": "https://github.com/elliothatch/zine-machine",
-		"description": "a little box that spits text out of a receipt printer",
-		"thumbnailUrl": "/projects/zine-machine.jpg"
-	}, {
-		"@type": "https://schema.org/CreativeWork",
-		"name": "burgundy",
-		"url": "/projects/burgundy",
-		"description": "color schemes",
-		"thumbnailUrl": "https://raw.githubusercontent.com/elliothatch/burgundy.vim/master/screenshots/burgundy.png"
-	}, {
-		"@type": "https://schema.org/SoftwareApplication",
-		"name": "esp32-leds",
-		"url": "https://github.com/elliothatch/esp32-leds",
-		"description": "driving WS2812 RBG leds with an ESP32 (WIP)",
-		"thumbnailUrl": "/projects/clock-thumb.jpg"
+		"image": "/store/chess-etc/set-clean.jpg"
 	}],
 	"code": [{
 		"@type": "https://schema.org/SoftwareApplication",
@@ -78,5 +34,28 @@
 		"name": "fresh-socketio-router",
 		"url": "https://github.com/elliothatch/fresh-socketio-router",
 		"description": "middleware router for socketio transactions"
+	}],
+	"_processors": [{
+		"name": "getIndex",
+		"options": {
+			"property": "@type",
+			"match": "/schema/project",
+			"to": "projects",
+			"embed": ["name", "description", "image"]
+		}
+	}, {
+		"name": "order",
+		"options": {
+			"property": "projects",
+			"key": "@id",
+			"values": [
+				"/projects/neurotischism",
+				"/projects/mazenet",
+				"/projects/sift",
+				"/projects/zine-machine",
+				"/projects/burgundy",
+				"/projects/esp32-leds"
+			]
+		}
 	}]
 }

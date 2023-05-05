@@ -4,22 +4,27 @@
 		{"@base": "https://elliot.zone/store/chess-etc"}
 	],
 
-	"_links": {
-		"profile": {
-			"href": "https://schema.org/ProductGroup"
-		}
-	},
-	"title": "chess etc.",
-
-	"@type": "https://schema.org/ProductGroup",
 	"name": "chess etc.",
+	"@type": "https://schema.org/ProductGroup",
 	"description": "Now with Checkers, Tangrams and Yotzo!",
 	"image": [
 		"/store/chess-etc/set-clean.jpg",
 		"/store/chess-etc/set-closed.jpg",
 		"/store/chess-etc/set-opened.jpg"
 	],
-	"body": "chess etc. is a 3d printed, hand assembled magnetic portable games set.<br>Includes chess, checkers, tangrams, and Yotzo dice.<br>The chess and checkers pieces contain strong magnets, so they stick to the board, and to the metal rails on the sides of the box.<br>Magnetic locks keep the sliding lid secured to the box during transport.<br>Perfect for travel or outdoor play!<br><br>Ages 8 years and up.<br>1+ players<br>WARNING: CHOKING HAZARD--Small parts. Not for children under 3 yrs.<br>Do not expose to temperatures exceeding 50° C (122 °F).",
+	"productGroupID": "chess-etc",
+	"body": "<p>chess etc. is a 3d printed, hand assembled magnetic portable games set.</p><p>Includes chess, checkers, tangrams, and Yotzo dice.</p><p>The chess and checkers pieces contain strong magnets, so they stick to the board, and to the metal rails on the sides of the box.</p><p>Magnetic locks keep the sliding lid secured to the box during transport.</p><p>Perfect for travel or outdoor play!</p><br><p>Ages 8 years and up.</p><p>1+ players</p><p>WARNING: CHOKING HAZARD--Small parts. Not for children under 3 yrs.</p><p>Do not expose to temperatures exceeding 50° C (122 °F).",
+	"width": "205 mm",
+	"height": "35 mm",
+	"depth": "200 mm",
+	"material": "PLA",
+	"countryOfOrigin": {
+		"address": {
+			"addressCountry": "USA",
+			"addressLocality": "Salt Lake City",
+			"addressRegion": "Utah"
+		}
+	},
 	"variesBy": [
 		"productID",
 		"color",
@@ -312,11 +317,11 @@
 		"@type": "/schema/storeSection",
 		"name": "documents",
 		"body": [{
-			"title": "manual (side 1)",
-			"href": "/store/chess-etc/manual-side-1.png"
+			"name": "manual (side 1)",
+			"url": "/store/chess-etc/manual-side-1.png"
 		}, {
-			"title": "manual (side 2)",
-			"href":"/store/chess-etc/manual-side-2.png"
+			"name": "manual (side 2)",
+			"url":"/store/chess-etc/manual-side-2.png"
 		}]
 	}]
 }

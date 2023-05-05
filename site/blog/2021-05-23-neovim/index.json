@@ -1,13 +1,9 @@
 {
-	"title": "how I use neovim",
-	"date-created": "2021-05-23",
+	"name": "how I use neovim",
+	"dateCreated": "2021-05-23",
 	"tag": ["blog", "neovim", "configuration"],
 	"description": "useful commands and plugins",
-	"_links": {
-		"profile": {
-			"href": "https://schema.org/BlogPosting"
-		}
-	},
+	"@type": "https://schema.org/BlogPosting",
 	"_processors": [{
 		"name": "copyFile",
 		"options": {

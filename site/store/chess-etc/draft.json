@@ -4,11 +4,6 @@
 		{"@base": "https://elliot.zone/store/chess-etc"}
 	],
 
-	"_links": {
-		"profile": {
-			"href": "https://schema.org/ProductGroup"
-		}
-	},
 	"title": "chess etc.",
 
 	"@type": "https://schema.org/ProductGroup",

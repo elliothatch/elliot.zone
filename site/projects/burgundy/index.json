@@ -12,23 +12,23 @@
 		"name": "burgundy.vim",
 		"url": "https://github.com/elliothatch/burgundy.vim",
 		"description": "neovim colorscheme",
-		"thumbnailUrl": "/projects/burgundy/burgundy-vim.png"
+		"image": "/projects/burgundy/burgundy-vim.png"
 	}, {
 		"@type": "https://schema.org/CreativeWork",
 		"name": "burgundywine",
 		"url": "https://addons.mozilla.org/en-US/firefox/addon/burgundywine/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search",
 		"description": "firefox theme",
-		"thumbnailUrl": "/projects/burgundy/burgundy-firefox.svg"
+		"image": "/projects/burgundy/burgundy-firefox.svg"
 	}, {
 		"@type": "https://schema.org/CreativeWork",
 		"name": "burgundy terminal",
 		"url": "https://github.com/elliothatch/dotfiles/blob/master/core/.config/alacritty/alacritty.yml",
 		"description": "alacritty theme",
-		"thumbnailUrl": "/projects/burgundy/burgundy-terminal.png"
+		"image": "/projects/burgundy/burgundy-terminal.png"
 	}],
 
 	"name": "burgundy",
 	"url": "/projects/burgundy",
 	"description": "color schemes",
-	"thumbnailUrl": "/projects/burgundy/burgundy-vim.png"
+	"image": "/projects/burgundy/burgundy-vim.png"
 }

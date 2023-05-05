@@ -6,5 +6,5 @@
 	"name": "sift cli",
 	"url": "https://github.com/elliothatch/sift",
 	"description": "interactive log filtering",
-	"thumbnailUrl": "/projects/sift.gif"
+	"image": "/projects/sift.gif"
 }

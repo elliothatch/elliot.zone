@@ -139,6 +139,13 @@
 
 			a {
 				padding-inline: 0.5em;
+
+				&:visited {
+					color: theme.$secondary-fg;
+				}
+				&:hover, &:focus {
+					color: theme.$accent-fg;
+				}
 			}
 		}
 

@@ -1,25 +1,10 @@
 {
-	"title": "posts",
+	"name": "posts",
 	"_processors": [{
 		"name": "getIndex",
 		"options": {
-			"property": "_links.profile.href",
-			"filter": "https://schema.org/BlogPosting",
-			"to": "_links.item"
-		}
-	}, {
-		"name": "sort",
-		"options": {
-			"property": "_links.item",
-			"key": "date-created",
-			"compare": "date",
-			"descending": true
-		}
-	}, {
-		"name": "embed",
-		"options": {
-			"property": "_links.item",
-			"pick": ["date-created", "excerpt", "excerptHtml"]
+			"property": "@type",
+			"match": "https://schema.org/BlogPosting"
 		}
 	}]
 }

@@ -1,32 +1,14 @@
 {
-	"_links": {
-		"profile": {
-			"href": "https://schema.org/ItemList"
-		}
-	},
 	"@type": "https://schema.org/ItemList",
-	"title": "projects",
+	"name": "projects",
 	"itemListOrder": "Unordered",
 	"_processors": [{
-		"name": "copy",
+		"name": "getIndex",
 		"options": {
-			"uri": "/~hypermedium/dynamic/index/@type",
-			"from": "index./schema/project",
-			"to": "itemListElement"
+			"property": "@type",
+			"match": "/schema/project",
+			"embed": ["name", "description", "image"]
 		}
-	}, {
-			"name": "map",
-			"options": {
-				"processor": {
-					"name": "embed",
-					"properties": [
-						"name",
-						"description",
-						"thumbnailUrl"
-					]
-				},
-				"property": "itemListElement"
-			}
 	}, {
 		"name": "order",
 		"options": {

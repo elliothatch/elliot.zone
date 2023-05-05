@@ -1,5 +1,5 @@
-<h1>{{title}}</h1>
-<p>{{body}}</p>
+<h1>{{name}}</h1>
+{{#if description}}<p>{{description}}</p>{{/if}}
 {{#if (eq itemListOrder "Unordered")}}
 <ul class="card-container rows item-list">
 {{else}}

@@ -1,10 +1,18 @@
 <li class="card">
 	{{#if thumbnailUrl }}
-	<div class="thumbnail">
+	<div class="image thumbnail">
 		<a href="{{url}}"><picture>
 			{{!-- <source srcset="" type="image/webp"> --}}
 				{{!-- <source srcset="" type="image/png"> --}} 
 					<img src="{{thumbnailUrl}}" alt="">
+		</picture></a>
+	</div>
+	{{else if image }}
+	<div class="image thumbnail">
+		<a href="{{url}}"><picture>
+			{{!-- <source srcset="" type="image/webp"> --}}
+				{{!-- <source srcset="" type="image/png"> --}} 
+					<img src="{{image}}" alt="">
 		</picture></a>
 	</div>
 	{{/if}}
