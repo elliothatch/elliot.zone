@@ -7,7 +7,7 @@
 		"options": {
 			"property": "@type",
 			"match": "/schema/project",
-			"embed": ["name", "description", "image"]
+			"embed": ["name", "description", "image", "url", "thumbnailUrl"]
 		}
 	}, {
 		"name": "order",

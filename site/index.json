@@ -41,7 +41,7 @@
 			"property": "@type",
 			"match": "/schema/project",
 			"to": "projects",
-			"embed": ["name", "description", "image"]
+			"embed": ["name", "description", "image", "url", "thumbnailUrl"]
 		}
 	}, {
 		"name": "order",

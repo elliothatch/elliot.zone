@@ -28,7 +28,10 @@ module.exports = {
 			},
 			renderer: {
 				templatePaths: ['templates'],
-				partialPaths: ['partials'],
+				partialPaths: [
+					'partials',
+					'dist/favicons'
+				],
 				profileLayouts: {
 					'/schema/homepage': 'layouts/homepage.hbs',
 					'/schema/under-construction': 'layouts/under-construction.hbs',
@@ -43,21 +46,38 @@ module.exports = {
 			},
 			build: {
 				buildSteps: {
-					sType: 'task',
-					definition: 'sass',
-					options: {
-						// include node_modules so we can @use any installed package (e.g. sanitize.css)
-						includePaths: [Path.join(__dirname, 'node_modules')]
-					},
-					watch: true,
-					files: [{
-						inputs: {target: ['sass/styles.scss']},
-						outputs: {
-							css: ['dist/css/styles.css'],
-							sourceMap: ['dist/css/styles.css.map'],
-						}
-					}],
-					watchFiles: ['sass']
+					sType: 'multitask',
+					steps: [{
+						sType: 'task',
+						definition: 'sass',
+						options: {
+							// include node_modules so we can @use any installed package (e.g. sanitize.css)
+							includePaths: [Path.join(__dirname, 'node_modules')]
+						},
+						watch: true,
+						files: [{
+							inputs: {target: ['sass/styles.scss']},
+							outputs: {
+								css: ['dist/css/styles.css'],
+								sourceMap: ['dist/css/styles.css.map'],
+							}
+						}],
+						watchFiles: ['sass']
+					}, {
+						sType: 'task',
+						definition: 'favicons',
+						files: [{
+							inputs: {
+								image: ['favicons/bug-480x480.png'],
+								override: ['favicons/override/favicon-16x16.png']
+							},
+							outputs: {
+								favicons: ['dist/favicons'],
+								html: ['dist/favicons/favicons.html']
+							}
+						}],
+						watchFiles: []
+					}]
 				}
 			}
 		};

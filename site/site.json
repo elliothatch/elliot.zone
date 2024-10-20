@@ -21,11 +21,15 @@
 		"name": "npm",
 		"url": "https://www.npmjs.com/~elliothatch"
 	}, {
+		"name": "mastodon",
+		"url": "https://autonomous.zone/@neurotischism",
+		"rel": "me"
+	}, {
+		"name": "bluesky",
+		"url": "https://bsky.app/profile/elliot.zone"
+	}, {
 		"name": "twitter",
 		"url": "https://twitter.com/neurotischism"
-	}, {
-		"name": "fedi",
-		"url": "https://weirder.earth/@neurotischism"
 	}, {
 		"name": "patreon",
 		"url": "https://www.patreon.com/neurotischism"
